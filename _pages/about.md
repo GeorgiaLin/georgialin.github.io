@@ -14,17 +14,13 @@ news: true
 social: true
 ---
 
-
-
-Hi there! My name is Zhengyi Luo (my friends call me Zen) and I am a second year reserach master's student at Carnegie Mellon University's Robotics Institute, School of Computer Science, advised by Prof. <a style="color:DodgerBlue" href="http://www.cs.cmu.edu/~kkitani/"><u>Kris Kitani</u></a>. I earned my bachelor's degree from University of Pennsylvania in 2019, where I worked with Prof. <a style="color:DodgerBlue" href="https://www.cis.upenn.edu/~kostas/"><u>Kostas Daniilidis</u></a>.
+Hi there! My name is Zhengyi Luo (my friends call me Zen) and I am a first year PhD student at Carnegie Mellon University's Robotics Institute, School of Computer Science, advised by Prof. <a style="color:DodgerBlue" href="http://www.cs.cmu.edu/~kkitani/"><u>Kris Kitani</u></a>. I earned my bachelor's degree from University of Pennsylvania in 2019, where I worked with Prof. <a style="color:DodgerBlue" href="https://www.cis.upenn.edu/~kostas/"><u>Kostas Daniilidis</u></a>.
 
 My research interest lies at the intersection of computer vision, machine learning, and robotics. I am working on topcis including human pose estimation, human-object interaction estimation, human motion generation etc. Through my research, I want to create methods that effectively interpret spatial-temporal sensory input and build a compositional representation of the 3D world to reason about the interactions between agents and the physical environment. On the application side, I am excited about building systems that would be useful as assistive robots, autonomous vehicles, and AR/VR virtual assistants.
 
 <!-- I am applying for Ph.D. for Fall 2021! If you find my profile interesting, you can leave your email here: <a style="color:DodgerBlue" href="https://forms.gle/5kCgzrNSBZSbufPr7">link</a> and I can reach out to you or feel free to reach out to me at zluo2 [at] cs.cmu.edu! -->
-I will (re)join Robotics Institute as a Phd Student Fall 2021!
 
 <div >
-
 
 <a style="color:DodgerBlue" href="mailto:zluo2@cs.cmu.edu">Email</a>
 /
@@ -39,6 +35,5 @@ I will (re)join Robotics Institute as a Phd Student Fall 2021!
 <a  style="color:DodgerBlue" href="https://twitter.com/zhengyiluo?lang=en">Twitter</a>
 /
 <a  style="color:DodgerBlue" href="https://m.facebook.com/public/Zen-Zhengyi-Luo">Facebook</a>
-
 
 </div>

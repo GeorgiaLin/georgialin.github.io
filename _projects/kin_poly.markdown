@@ -9,8 +9,7 @@ type: research
 
 <h3 style="text-align: center;font-size:30px"> Dynamics-Regulated Kinematic Policy <br> for Egocentric Pose Estimation </h3>
 <h4 style="text-align: center;color:DodgerBlue"> Zhengyi Luo, Ryo Hachiuma, Ye Yuan, Kris M. Kitani  </h4>
-<h5 style="text-align: center;"> arXiv 2020 </h5>
-
+<h5 style="text-align: center;"> Neurips 2021 </h5>
 
 <div class="row">
     <div class="col-sm-12 mt-3 mt-md-0 mx-md-0 ml-md-0">
@@ -42,10 +41,9 @@ type: research
     <div class="col-sm-12 mt-3 mt-md-0 mx-md-0 ml-md-0">
         <img class="img-fluid rounded z-depth-0" src="{{ '/assets/img/projects/kin_poly/overview.png' | relative_url }}" alt="" title="Kin-Poly image"/>
     </div>
-</div> 
+</div>
 
-Our framework first learns a Universal Humanoid Controller (UHC) from a large MoCap dataset. The learned UHC can be viewed as providing the lower level muscle skills of a real human, trained from mimicking thousands of human motion sequences. Using the trained UHC, we learn our kinematic policy through dynamics-regulated training. The kinematic policy provides per-step target motion to the UHC, forming a closed-loop system that operates inside the physics simulation to control a humanoid. For more details, please checkout our paper and supplementary video: 
-
+Our framework first learns a Universal Humanoid Controller (UHC) from a large MoCap dataset. The learned UHC can be viewed as providing the lower level muscle skills of a real human, trained from mimicking thousands of human motion sequences. Using the trained UHC, we learn our kinematic policy through dynamics-regulated training. The kinematic policy provides per-step target motion to the UHC, forming a closed-loop system that operates inside the physics simulation to control a humanoid. For more details, please checkout our paper and supplementary video:
 
 <h3 style="color:darkblue">Supplementary Video</h3>
 <div class="embed-container">

@@ -1,94 +1,93 @@
 pre_prints:
-  
+
 publications:
-    - title: Dynamics-Regulated Kinematic Policy for Egocentric Pose Estimation
-      authors: 
-        - Zhengyi Luo
-        - Ryo hachiuma
-        - Ye Yuan
-        - Kris M. Kitani
-      venue: In Submission, 2021
-      comments: 
-      video_url: https://youtu.be/yEiK9K1N-zw
-      page_url: /projects/kin_poly
-      paper_url: https://arxiv.org/abs/2106.05969v1
-      github_url: https://github.com/KlabCMU/kin-poly
-      image: projects/kin_poly/teaser.gif
-    - title: "3D Human Motion Estimation via Motion Compression and Refinement"
-      authors: 
-        - Zhengyi Luo
-        - S. Alireza Golestaneh
-        - Kris M. Kitani
-      venue: Fifteenth Asian Conference on Computer Vision (ACCV), 2020
-      comments: Oral Presentation
-      video_url: "https://www.youtube.com/watch?v=YBb9NDz3ngM"
-      page_url: /projects/meva
-      paper_url: https://arxiv.org/abs/2008.03789
-      github_url: https://github.com/ZhengyiLuo/MEVA
-      image: projects/meva.gif
-    - title: Learning Shape Representations for Clothing Variations in Person Re-Identification
-      authors: 
-        - Yu-Jhe Li
-        - Zhengyi Luo
-        - Xinshuo Weng 
-        - Kris M. Kitani
-      venue: arXiv, 2020
-      comments: 
-      video_url: 
-      page_url: 
-      paper_url: https://arxiv.org/abs/2003.07340
-      github_url: 
-      image: projects/reid.gif
+  - title: Dynamics-Regulated Kinematic Policy for Egocentric Pose Estimation
+    authors:
+      - Zhengyi Luo
+      - Ryo hachiuma
+      - Ye Yuan
+      - Kris M. Kitani
+    venue: Neurips 2021
+    comments:
+    video_url: https://youtu.be/yEiK9K1N-zw
+    page_url: /projects/kin_poly
+    paper_url: https://arxiv.org/abs/2106.05969v1
+    github_url: https://github.com/KlabCMU/kin-poly
+    image: projects/kin_poly/teaser.gif
+  - title: "3D Human Motion Estimation via Motion Compression and Refinement"
+    authors:
+      - Zhengyi Luo
+      - S. Alireza Golestaneh
+      - Kris M. Kitani
+    venue: Fifteenth Asian Conference on Computer Vision (ACCV), 2020
+    comments: Oral Presentation
+    video_url: "https://www.youtube.com/watch?v=YBb9NDz3ngM"
+    page_url: /projects/meva
+    paper_url: https://arxiv.org/abs/2008.03789
+    github_url: https://github.com/ZhengyiLuo/MEVA
+    image: projects/meva.gif
+  - title: Learning Shape Representations for Clothing Variations in Person Re-Identification
+    authors:
+      - Yu-Jhe Li
+      - Zhengyi Luo
+      - Xinshuo Weng
+      - Kris M. Kitani
+    venue: arXiv, 2020
+    comments:
+    video_url:
+    page_url:
+    paper_url: https://arxiv.org/abs/2003.07340
+    github_url:
+    image: projects/reid.gif
 
-    - title: Cross-Domain 3D Equivariant Image Embeddings
-      authors: 
-        - Carlos Esteves
-        - Avneesh Sud 
-        - Zhengyi Luo 
-        - Kostas Daniilidis 
-        - Ameesh Makadia
-      venue: Thirty-seventh International Conference on Machine Learning (ICML), 2019
-      video_url: 
-      page_url: 
-      paper_url: https://arxiv.org/abs/1812.02716
-      github_url: 
-      image: projects/sphere.png
-    - title: "Cloud Chaser: Real Time Deep Learning Computer Vision on Low Computing Power Devices"
-      authors: 
-        - Zhengyi Luo 
-        - Austin Small
-        - Liam Dugan
-        - Stephen Lane
-      venue: The Eleventh International Conference on Machine Vision (ICMV), 2018
-      comments: 
-      page_url: https://zhengyiluo.github.io/projects/cloudchaser/
-      paper_url: https://arxiv.org/abs/1810.01069
-      github_url: https://github.com/ZhengyiLuo/Cloud-Chaser
-      image: projects/chase.jpg
-    - title: "The rural–urban stress divide: Obtaining geographical insights through Twitter"
-      authors: 
-        - Kokil Jaidka
-        - Sharath Chandra Guntuku 
-        - Jane H Lee
-        - Zhengyi Luo
-        - Anneke Buffone
-        - Lyle H Ungar
-      venue: "Computers in Human Behavior, 2020: 106544"
-      comments: 
-      page_url: http://zhengyiluo.github.io/projects/stress_twitter/
-      paper_url: https://www.sciencedirect.com/science/article/pii/S0747563220302958
-      # github_url: https://github.com/ZhengyiLuo/Cloud-Chaser
-      image: projects/tweet.png
+  - title: Cross-Domain 3D Equivariant Image Embeddings
+    authors:
+      - Carlos Esteves
+      - Avneesh Sud
+      - Zhengyi Luo
+      - Kostas Daniilidis
+      - Ameesh Makadia
+    venue: Thirty-seventh International Conference on Machine Learning (ICML), 2019
+    video_url:
+    page_url:
+    paper_url: https://arxiv.org/abs/1812.02716
+    github_url:
+    image: projects/sphere.png
+  - title: "Cloud Chaser: Real Time Deep Learning Computer Vision on Low Computing Power Devices"
+    authors:
+      - Zhengyi Luo
+      - Austin Small
+      - Liam Dugan
+      - Stephen Lane
+    venue: The Eleventh International Conference on Machine Vision (ICMV), 2018
+    comments:
+    page_url: https://zhengyiluo.github.io/projects/cloudchaser/
+    paper_url: https://arxiv.org/abs/1810.01069
+    github_url: https://github.com/ZhengyiLuo/Cloud-Chaser
+    image: projects/chase.jpg
+  - title: "The rural–urban stress divide: Obtaining geographical insights through Twitter"
+    authors:
+      - Kokil Jaidka
+      - Sharath Chandra Guntuku
+      - Jane H Lee
+      - Zhengyi Luo
+      - Anneke Buffone
+      - Lyle H Ungar
+    venue: "Computers in Human Behavior, 2020: 106544"
+    comments:
+    page_url: http://zhengyiluo.github.io/projects/stress_twitter/
+    paper_url: https://www.sciencedirect.com/science/article/pii/S0747563220302958
+    # github_url: https://github.com/ZhengyiLuo/Cloud-Chaser
+    image: projects/tweet.png
 
-    
-    - title: "Visual Analytics Approach to Vessel Behaviour Analysis"
-      authors: 
-        - Liang Jin*
-        - Zhengyi Luo*
-        - Shu Gao
-      venue: "Journal of Navigation, 2018,71(5): 1195-1209"
-      comments: "* indicates equal contribution"
-      # page_url: 
-      # paper_url: https://arxiv.org/abs/1810.01069
-      # github_url: https://github.com/ZhengyiLuo/Cloud-Chaser
-      image: projects/boat.png
+  - title: "Visual Analytics Approach to Vessel Behaviour Analysis"
+    authors:
+      - Liang Jin*
+      - Zhengyi Luo*
+      - Shu Gao
+    venue: "Journal of Navigation, 2018,71(5): 1195-1209"
+    comments: "* indicates equal contribution"
+    # page_url:
+    # paper_url: https://arxiv.org/abs/1810.01069
+    # github_url: https://github.com/ZhengyiLuo/Cloud-Chaser
+    image: projects/boat.png
