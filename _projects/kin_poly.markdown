@@ -9,7 +9,7 @@ type: research
 
 <h3 style="text-align: center;font-size:30px"> Dynamics-Regulated Kinematic Policy <br> for Egocentric Pose Estimation </h3>
 <h4 style="text-align: center;color:DodgerBlue"> Zhengyi Luo, Ryo Hachiuma, Ye Yuan, Kris M. Kitani  </h4>
-<h5 style="text-align: center;"> Neurips 2021 </h5>
+<h5 style="text-align: center;"> NeurIPS 2021 </h5>
 
 <div class="row">
     <div class="col-sm-12 mt-3 mt-md-0 mx-md-0 ml-md-0">
