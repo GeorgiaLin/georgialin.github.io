@@ -33,7 +33,5 @@ My research interest lies at the intersection of computer vision, machine learni
 <a  style="color:DodgerBlue" href="https://www.linkedin.com/in/zhengyi-zen-luo-726156105/">Linkedin</a>
 /
 <a  style="color:DodgerBlue" href="https://twitter.com/zhengyiluo?lang=en">Twitter</a>
-/
-<a  style="color:DodgerBlue" href="https://m.facebook.com/public/Zen-Zhengyi-Luo">Facebook</a>
 
 </div>
