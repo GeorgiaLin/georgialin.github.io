@@ -45,7 +45,20 @@ type: research
 
 Our framework first learns a Universal Humanoid Controller (UHC) from a large MoCap dataset. The learned UHC can be viewed as providing the lower level muscle skills of a real human, trained from mimicking thousands of human motion sequences. Using the trained UHC, we learn our kinematic policy through dynamics-regulated training. The kinematic policy provides per-step target motion to the UHC, forming a closed-loop system that operates inside the physics simulation to control a humanoid. For more details, please checkout our paper and supplementary video:
 
-<h3 style="color:darkblue">Supplementary Video</h3>
+<h3 style="color:darkblue">10 mins talk</h3>
+<div class="embed-container">
+<center>
+  <iframe
+      src="https://www.youtube.com/embed/pr_p4vBE0AM"
+      width="700"
+      height="480"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+  </center>
+</div>
+
+<h3 style="color:darkblue">Demo Video</h3>
 <div class="embed-container">
 <center>
   <iframe
