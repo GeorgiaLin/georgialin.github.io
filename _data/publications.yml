@@ -1,13 +1,25 @@
 pre_prints:
 
 publications:
+  - title: "Transform2Act: Learning a Transform-and-Control Policy for Efficient Agent Design"
+    authors:
+      - Ye Yuan
+      - Yuda Song
+      - Zhengyi Luo
+      - Wen Sun
+      - Kris M. Kitani
+    venue: ICLR 2022  (Oral Presentation — Top 1.6%)
+    comments: 
+    page_url: https://sites.google.com/view/transform2act
+    paper_url: https://arxiv.org/abs/2110.03659
+    image: projects/transform2act/transform2act.gif
   - title: Dynamics-Regulated Kinematic Policy for Egocentric Pose Estimation
     authors:
       - Zhengyi Luo
       - Ryo hachiuma
       - Ye Yuan
       - Kris M. Kitani
-    venue: Thirty-Fifth Annual Conference on Neural Information Processing Systems (NeurIPS 2021)
+    venue: ICCVW (CV4ARVR) 2021, NeurIPS 2021
     comments:
     video_url: https://youtu.be/pr_p4vBE0AM
     page_url: /projects/kin_poly
@@ -19,7 +31,7 @@ publications:
       - Zhengyi Luo
       - S. Alireza Golestaneh
       - Kris M. Kitani
-    venue: Fifteenth Asian Conference on Computer Vision (ACCV), 2020
+    venue: ACCV 2020
     comments: Oral Presentation
     video_url: "https://www.youtube.com/watch?v=YBb9NDz3ngM"
     page_url: /projects/meva
@@ -47,7 +59,7 @@ publications:
       - Zhengyi Luo
       - Kostas Daniilidis
       - Ameesh Makadia
-    venue: Thirty-seventh International Conference on Machine Learning (ICML), 2019
+    venue: ICML 2019
     video_url:
     page_url:
     paper_url: https://arxiv.org/abs/1812.02716
@@ -59,7 +71,7 @@ publications:
       - Austin Small
       - Liam Dugan
       - Stephen Lane
-    venue: The Eleventh International Conference on Machine Vision (ICMV), 2018
+    venue: ICMV 2018
     comments:
     page_url: https://zhengyiluo.github.io/projects/cloudchaser/
     paper_url: https://arxiv.org/abs/1810.01069
