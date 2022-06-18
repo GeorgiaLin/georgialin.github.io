@@ -1,6 +1,17 @@
 pre_prints:
 
 publications:
+  - title: "Embodied Scene-aware Human Pose Estimation"
+    authors:
+      - Zhengyi Luo*
+      - Shun Iwase*
+      - Ye Yuan
+      - Kris M. Kitani
+    venue: In Submission
+    comments: "* Equal contribution"
+    page_url: https://embodiedscene.github.io/embodiedpose/
+    paper_url: https://embodiedscene.github.io/embodiedpose/
+    image: projects/embodied_scene/embodied_scene.gif
   - title: "From Universal Humanoid Control to Automatic Physically Valid Character Creation"
     authors:
       - Zhengyi Luo
