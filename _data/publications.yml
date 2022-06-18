@@ -1,6 +1,16 @@
 pre_prints:
 
 publications:
+  - title: "From Universal Humanoid Control to Automatic Physically Valid Character Creation"
+    authors:
+      - Zhengyi Luo
+      - Ye Yuan
+      - Kris M. Kitani
+    venue: In Submission
+    comments: 
+    page_url: /projects/agent_design
+    paper_url: /projects/agent_design
+    image: projects/agent_design/agent_design.gif
   - title: "Transform2Act: Learning a Transform-and-Control Policy for Efficient Agent Design"
     authors:
       - Ye Yuan
