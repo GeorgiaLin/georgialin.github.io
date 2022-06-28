@@ -10,7 +10,7 @@ publications:
     venue: In Submission
     comments: "* Equal contribution"
     page_url: https://embodiedscene.github.io/embodiedpose/
-    paper_url: https://embodiedscene.github.io/embodiedpose/
+    paper_url: https://arxiv.org/abs/2206.09106
     image: projects/embodied_scene/embodied_scene.gif
   - title: "From Universal Humanoid Control to Automatic Physically Valid Character Creation"
     authors:
@@ -20,7 +20,7 @@ publications:
     venue: In Submission
     comments: 
     page_url: /projects/agent_design
-    paper_url: /projects/agent_design
+    paper_url: https://arxiv.org/abs/2206.09286
     image: projects/agent_design/agent_design.gif
   - title: "Transform2Act: Learning a Transform-and-Control Policy for Efficient Agent Design"
     authors:
