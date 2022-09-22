@@ -7,7 +7,7 @@ publications:
       - Shun Iwase*
       - Ye Yuan
       - Kris M. Kitani
-    venue: In Submission
+    venue: NeurIPS 2022
     comments: "* Equal contribution"
     page_url: https://embodiedscene.github.io/embodiedpose/
     paper_url: https://arxiv.org/abs/2206.09106
@@ -44,7 +44,7 @@ publications:
     comments:
     video_url: https://youtu.be/pr_p4vBE0AM
     page_url: /projects/kin_poly
-    paper_url: https://arxiv.org/abs/2106.05969v1
+    paper_url: https://arxiv.org/abs/2106.05969v2
     github_url: https://github.com/KlabCMU/kin-poly
     image: projects/kin_poly/teaser.gif
   - title: "3D Human Motion Estimation via Motion Compression and Refinement"
