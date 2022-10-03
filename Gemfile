@@ -9,3 +9,5 @@ group :jekyll_plugins do
     gem 'unicode_utils'
     gem 'jekyll-seo-tag'
 end
+
+gem "webrick", "~> 1.7"

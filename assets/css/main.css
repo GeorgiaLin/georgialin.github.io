@@ -46,7 +46,7 @@ body.sticky-bottom-footer { padding-bottom: 0; }
 .news table .date { width: 19%; }
 .news table .announcement { width: 81%; }
 .news table tr { text-align: left; }
-.news table td { padding: 6px 0; vertical-align: top; border: none; }
+.news table td { padding: 0px 0; vertical-align: top; border: none; }
 
 /******************************************************************************* Styles for the base elements of the theme. *****************************************************************************/
 a, table.table a { color: #828282; }
