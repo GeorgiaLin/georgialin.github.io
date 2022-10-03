@@ -3,7 +3,7 @@ layout: page
 title: Kin_poly
 description: Dynamics-Regulated Kinematic Policy for Egocentric Pose Estimation
 img: /assets/img/projects/kin_poly/teaser.gif
-importance: 1
+importance: 2
 type: research
 ---
 

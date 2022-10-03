@@ -3,7 +3,7 @@ layout: page
 title: agent_design
 description: From Universal Humanoid Control to Automatic Physically Valid Character Creation
 img: /assets/img/projects/agent_design/agent_design.gif
-importance: 1
+importance: 3
 type: research
 ---
 

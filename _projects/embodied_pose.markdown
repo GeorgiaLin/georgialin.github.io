@@ -2,8 +2,8 @@
 layout: project
 title: Embodied Pose
 description: "Embodied Scene-aware Human Pose Estimation"
-img: /assets/img/projects/chase.jpg
-importance: 3
+img: /assets/img/projects/embodied_scene/embodied_scene.gif
+importance: 1
 type: research
 ---
 
