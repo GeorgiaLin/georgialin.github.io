@@ -9,7 +9,7 @@ publications:
       - Kris M. Kitani
     venue: NeurIPS 2022
     comments: "* Equal contribution"
-    page_url: https://embodiedscene.github.io/embodiedpose/
+    page_url: /projects/embodied_pose/
     paper_url: https://arxiv.org/abs/2206.09106
     image: projects/embodied_scene/embodied_scene.gif
   - title: "From Universal Humanoid Control to Automatic Physically Valid Character Creation"
