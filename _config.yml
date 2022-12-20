@@ -1,11 +1,15 @@
+# @Author: Your name
+# @Date:   2022-10-08 15:46:26
+# @Last Modified by:   Your name
+# @Last Modified time: 2022-12-19 21:08:10
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Zhengyi (Zen) Luo
+title: Zhengyi (Zen) Luo 
 email: zluo2@cs.cmu.edu
 description: > # this means to ignore newlines until "url:"
-  Hi! My name is Zhengyi (Zen) Luo and I am currently a second-year research master's student at CMU! Welcome to my website! 
+  Hi! My name is Zhengyi (Zen) Luo, welcome to my website! 
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
