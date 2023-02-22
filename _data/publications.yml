@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2022-10-08 15:46:26
 # @Last Modified by:   Your name
-# @Last Modified time: 2023-02-22 13:16:51
+# @Last Modified time: 2023-02-22 13:27:45
 pre_prints:
 
 publications:
@@ -23,10 +23,11 @@ publications:
       - Zhengyi Luo
       - Ye Yuan
       - Kris M. Kitani
-    venue: In Submission
+    venue: ArXiv
     comments:
     page_url: /projects/agent_design
     paper_url: https://arxiv.org/abs/2206.09286
+    github_url: https://github.com/ZhengyiLuo/UniversalHumanoidControl
     image: projects/agent_design/agent_design.gif
   - title: "Transform2Act: Learning a Transform-and-Control Policy for Efficient Agent Design"
     authors:
