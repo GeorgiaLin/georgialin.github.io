@@ -1,3 +1,7 @@
+# @Author: Your name
+# @Date:   2022-10-08 15:46:26
+# @Last Modified by:   Your name
+# @Last Modified time: 2023-02-22 13:16:51
 pre_prints:
 
 publications:
@@ -12,6 +16,7 @@ publications:
     page_url: /projects/embodied_pose/
     paper_url: https://arxiv.org/abs/2206.09106
     video_url: https://www.youtube.com/watch?v=8Ae0xzqAtm8
+    github_url: https://github.com/ZhengyiLuo/EmbodiedPose
     image: projects/embodied_scene/embodied_scene.gif
   - title: "From Universal Humanoid Control to Automatic Physically Valid Character Creation"
     authors:
@@ -19,7 +24,7 @@ publications:
       - Ye Yuan
       - Kris M. Kitani
     venue: In Submission
-    comments: 
+    comments:
     page_url: /projects/agent_design
     paper_url: https://arxiv.org/abs/2206.09286
     image: projects/agent_design/agent_design.gif
@@ -31,9 +36,10 @@ publications:
       - Wen Sun
       - Kris M. Kitani
     venue: ICLR 2022  (Oral Presentation — Top 1.6%)
-    comments: 
+    comments:
     page_url: https://sites.google.com/view/transform2act
     paper_url: https://arxiv.org/abs/2110.03659
+    github_url: https://github.com/Khrylx/Transform2Act
     image: projects/transform2act/transform2act.gif
   - title: Dynamics-Regulated Kinematic Policy for Egocentric Pose Estimation
     authors:
