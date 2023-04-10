@@ -1,10 +1,35 @@
 # @Author: Your name
 # @Date:   2022-10-08 15:46:26
-# @Last Modified by:   Your name
-# @Last Modified time: 2023-02-22 13:27:45
+# @Last Modified by:   Zhengyi Luo
+# @Last Modified time: 2023-04-09 21:46:29
 pre_prints:
 
 publications:
+  - title: "Perpetual Humanoid Control for Real-time Simulated Avatars"
+    authors:
+      - Zhengyi Luo
+      - Jinkun Cao
+      - Alexander Winkler
+      - Kris Kitani
+      - Weipeng Xu
+    venue: In submission
+    page_url: /PHC
+    image: projects/phc/phc.gif
+  - title: "Trace and Pace: Controllable Pedestrian Animation via Guided Trajectory Diffusion"
+    authors:
+      - Davis Rempe*
+      - Zhengyi Luo*
+      - Xue Bin Peng
+      - Ye Yuan 
+      - Kris Kitani
+      - Karsten Kreis
+      - Sanja Fidler
+      - Or Litany
+    venue: CVPR 2023
+    comments: "* Equal contribution"
+    page_url: https://nv-tlabs.github.io/trace-pace/
+    paper_url: https://arxiv.org/abs/2304.01893
+    image: projects/trace_pace/trace_pace.gif
   - title: "Embodied Scene-aware Human Pose Estimation"
     authors:
       - Zhengyi Luo*
