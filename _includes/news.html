@@ -4,20 +4,18 @@
     <div class="table-responsive">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             {% assign news = site.news | reverse %} {% for item in news limit: site.news_limit %} {% if idx > 5 %}
-            <tr class="table_toggle" style="display: none;">
+            <tr class="table_toggle" style="display: none; ">
                 <td>
                     <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
                 </td>
-                <td>{{ item.content | remove: '
-                    <p>' | remove: '</p>' | emojify }} </td>
+                <td>{{ item.content | remove: '<p>' | remove: '</p>' | emojify }} </td>
             </tr>
             {% else %}
             <tr>
-                <td>
-                    <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
+                <td >
+                    <th scope="row" style="width:15%">{{ item.date | date: "%b %-d, %Y" }}</th>
                 </td>
-                <td>{{ item.content | remove: '
-                    <p>' | remove: '</p>' | emojify }} </td>
+                <td style="width:85%">{{ item.content | remove: '<p>' | remove: '</p>' | emojify }} </td>
             </tr>
             {% endif %} {% assign idx = idx | plus: 1 %} {% endfor %}
         </table>
