@@ -16,6 +16,18 @@ publications:
     page_url: /PHC
     paper_url: https://arxiv.org/abs/2305.06456
     image: projects/phc/phc.gif
+  - title: "Learning Human Dynamics in Autonomous Driving Scenarios"
+    authors:
+      - Jingbo Wang
+      - Ye Yuan
+      - Zhengyi Luo 
+      - Kevin Xie
+      - Dahua Lin
+      - Umar Iqbal
+      - Sanja Fidler
+      - Sameh Khamis
+    venue: ICCV 2023
+    image: projects/lhdad/lhdad.gif
   - title: "Trace and Pace: Controllable Pedestrian Animation via Guided Trajectory Diffusion"
     authors:
       - Davis Rempe*
