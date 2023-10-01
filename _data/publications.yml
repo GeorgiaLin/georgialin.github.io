@@ -1,10 +1,22 @@
 # @Author: Your name
 # @Date:   2022-10-08 15:46:26
 # @Last Modified by:   Zhengyi Luo
-# @Last Modified time: 2023-07-14 14:13:17
+# @Last Modified time: 2023-10-01 16:48:53
 pre_prints:
 
 publications:
+  - title: "Universal Humanoid Motion Representations for Physics-Based Control"
+    authors:
+      - Zhengyi Luo
+      - Jinkun Cao
+      - Josh Merel
+      - Alexander Winkler
+      - Jing Huang
+      - Kris Kitani
+      - Weipeng Xu
+    venue: In submission
+    page_url: https://pulse-humanoid.github.io/pulse/
+    image: projects/pulse/pulse.gif
   - title: "Perpetual Humanoid Control for Real-time Simulated Avatars"
     authors:
       - Zhengyi Luo
@@ -15,6 +27,7 @@ publications:
     venue: ICCV 2023
     page_url: /PHC
     paper_url: https://arxiv.org/abs/2305.06456
+    video_url: https://www.youtube.com/watch?v=zS6Y00EW37A
     image: projects/phc/phc.gif
   - title: "Learning Human Dynamics in Autonomous Driving Scenarios"
     authors:
@@ -28,6 +41,7 @@ publications:
       - Sameh Khamis
     venue: ICCV 2023
     image: projects/lhdad/lhdad.gif
+    paper_url: https://openaccess.thecvf.com/content/ICCV2023/papers/Wang_Learning_Human_Dynamics_in_Autonomous_Driving_Scenarios_ICCV_2023_paper.pdf
   - title: "Trace and Pace: Controllable Pedestrian Animation via Guided Trajectory Diffusion"
     authors:
       - Davis Rempe*
@@ -54,7 +68,7 @@ publications:
     comments: "* Equal contribution"
     page_url: /projects/embodied_pose/
     paper_url: https://arxiv.org/abs/2206.09106
-    video_url: https://www.youtube.com/watch?v=8Ae0xzqAtm8
+    video_url: https://www.youtube.com/watch?v=S_yYds67OgI
     github_url: https://github.com/ZhengyiLuo/EmbodiedPose
     image: projects/embodied_scene/embodied_scene.gif
   - title: "From Universal Humanoid Control to Automatic Physically Valid Character Creation"
