@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2022-10-08 15:46:26
 # @Last Modified by:   Zhengyi Luo
-# @Last Modified time: 2023-10-02 14:02:59
+# @Last Modified time: 2023-10-27 14:39:50
 pre_prints:
 
 publications:
@@ -29,6 +29,7 @@ publications:
     page_url: /PHC
     paper_url: https://arxiv.org/abs/2305.06456
     video_url: https://www.youtube.com/watch?v=zS6Y00EW37A
+    github_url: https://github.com/ZhengyiLuo/PerpetualHumanoidControl
     image: projects/phc/phc.gif
   - title: "Learning Human Dynamics in Autonomous Driving Scenarios"
     authors:
