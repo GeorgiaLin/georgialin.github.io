@@ -5,6 +5,18 @@
 pre_prints:
 
 publications:
+  - title: "Real-Time Simulated Avatar from Head-Mounted Sensors"
+    authors:
+      - Zhengyi Luo
+      - Jinkun Cao
+      - Rawal Khirodkar
+      - Alexander Winkler
+      - Jing Huang
+      - Kris Kitani
+      - Weipeng Xu
+    venue: In submission
+    page_url: /SimXR
+    image: projects/simxr/simxr.gif
   - title: "Universal Humanoid Motion Representations for Physics-Based Control"
     authors:
       - Zhengyi Luo
