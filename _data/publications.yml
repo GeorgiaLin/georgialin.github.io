@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2022-10-08 15:46:26
 # @Last Modified by:   Zhengyi Luo
-# @Last Modified time: 2023-10-27 14:39:50
+# @Last Modified time: 2023-12-03 12:55:47
 pre_prints:
 
 publications:
@@ -187,15 +187,3 @@ publications:
     paper_url: https://www.sciencedirect.com/science/article/pii/S0747563220302958
     # github_url: https://github.com/ZhengyiLuo/Cloud-Chaser
     image: projects/tweet.png
-
-  - title: "Visual Analytics Approach to Vessel Behaviour Analysis"
-    authors:
-      - Liang Jin*
-      - Zhengyi Luo*
-      - Shu Gao
-    venue: "Journal of Navigation, 2018,71(5): 1195-1209"
-    comments: "* indicates equal contribution"
-    # page_url:
-    # paper_url: https://arxiv.org/abs/1810.01069
-    # github_url: https://github.com/ZhengyiLuo/Cloud-Chaser
-    image: projects/boat.png
