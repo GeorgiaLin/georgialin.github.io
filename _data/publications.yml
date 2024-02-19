@@ -41,7 +41,7 @@ publications:
     page_url: /PHC
     paper_url: https://arxiv.org/abs/2305.06456
     video_url: https://www.youtube.com/watch?v=zS6Y00EW37A
-    github_url: https://github.com/ZhengyiLuo/PerpetualHumanoidControl
+    github_url: https://github.com/ZhengyiLuo/PHC
     image: projects/phc/phc.gif
   - title: "Learning Human Dynamics in Autonomous Driving Scenarios"
     authors:
