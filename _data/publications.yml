@@ -5,6 +5,18 @@
 pre_prints:
 
 publications:
+  - title: "Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation"
+    authors:
+      - Tairan He*
+      - Zhengyi Luo*
+      - Wenli Xiao
+      - Chong Zhang
+      - Kris Kitani
+      - Changliu Liu
+      - Guanya Shi
+    venue: In submission
+    page_url: https://human2humanoid.com/
+    image: projects/h2o/h2o.gif
   - title: "Real-Time Simulated Avatar from Head-Mounted Sensors"
     authors:
       - Zhengyi Luo
