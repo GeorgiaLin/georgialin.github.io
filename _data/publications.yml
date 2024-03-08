@@ -17,6 +17,7 @@ publications:
     venue: In submission
     comments: "* Equal contribution"
     page_url: https://human2humanoid.com/
+    paper_url: https://arxiv.org/abs/2403.04436
     image: projects/h2o/h2o.gif
   - title: "Real-Time Simulated Avatar from Head-Mounted Sensors"
     authors:
