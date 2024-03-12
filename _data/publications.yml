@@ -44,6 +44,7 @@ publications:
     venue: ICLR 2024  (Spotlight — Top 5%)
     page_url: /PULSE
     paper_url: https://arxiv.org/abs/2310.04582
+    github_url: https://github.com/ZhengyiLuo/PULSE
     image: projects/pulse/pulse.gif
   - title: "Perpetual Humanoid Control for Real-time Simulated Avatars"
     authors:
