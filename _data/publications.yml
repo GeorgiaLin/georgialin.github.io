@@ -30,6 +30,7 @@ publications:
       - Weipeng Xu
     venue: CVPR 2024
     page_url: /SimXR
+    paper_url: https://arxiv.org/abs/2403.06862
     image: projects/simxr/simxr.gif
   - title: "Universal Humanoid Motion Representations for Physics-Based Control"
     authors:
