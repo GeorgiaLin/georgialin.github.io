@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2022-10-08 15:46:26
 # @Last Modified by:   Zhengyi Luo
-# @Last Modified time: 2024-03-20 19:46:12
+# @Last Modified time: 2024-03-20 20:04:10
 pre_prints:
 
 publications:
@@ -41,13 +41,14 @@ publications:
       - Bo Dai
     venue: CVPR 2024
     comments: "* Equal contribution"
-    page_url: https://wangjingbo1219.github.io/papers/CVPR2024_PACER_PLUS/pacer_plus.pdf
+    paper_url: https://wangjingbo1219.github.io/papers/CVPR2024_PACER_PLUS/pacer_plus.pdf
     image: projects/pacer+/pacer+.gif
   - title: "Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives"
     authors:
       - K Grauman et al.
     venue: CVPR 2024
     page_url: https://ego-exo4d-data.org/
+    paper_url: https://arxiv.org/abs/2311.18259
     image: projects/egoexo4d/egoexo4d.gif
   - title: "Universal Humanoid Motion Representations for Physics-Based Control"
     authors:
