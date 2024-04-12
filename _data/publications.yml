@@ -46,7 +46,7 @@ publications:
   - title: "Ego-Exo4D: Understanding Skilled Human Activity from First- and Third-Person Perspectives"
     authors:
       - K Grauman et al.
-    venue: CVPR 2024
+    venue: CVPR 2024 (Oral — Top 3%)
     page_url: https://ego-exo4d-data.org/
     paper_url: https://arxiv.org/abs/2311.18259
     image: projects/egoexo4d/egoexo4d.gif
