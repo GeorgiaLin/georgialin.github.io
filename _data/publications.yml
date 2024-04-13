@@ -50,6 +50,18 @@ publications:
     page_url: https://ego-exo4d-data.org/
     paper_url: https://arxiv.org/abs/2311.18259
     image: projects/egoexo4d/egoexo4d.gif
+  - title: "PhysHOI: Physics-Based Imitation of Dynamic Human-Object Interaction"
+    authors:
+      - Yinhuai Wang
+      - Jing Lin
+      - Ailing Zeng
+      - Zhengyi Luo
+      - Jian Zhang
+      - Lei Zhang
+    venue: In Submission
+    page_url: https://wyhuai.github.io/physhoi-page/
+    paper_url: https://arxiv.org/abs/2312.04393
+    image: projects/physhoi/physhoi.gif
   - title: "Universal Humanoid Motion Representations for Physics-Based Control"
     authors:
       - Zhengyi Luo
