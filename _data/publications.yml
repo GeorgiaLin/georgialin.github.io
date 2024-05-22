@@ -7,13 +7,14 @@ pre_prints:
 publications:
   - title: "Simulated Humanoid Grasping on Diverse Objects"
     authors:
-      - Zhengyi Luo
-      - Jinkun Cao
+      - Zhengyi Luo*
+      - Jinkun Cao*
       - Sammy Christen
       - Alexander Winkler
       - Kris Kitani
       - Weipeng Xu
     venue: In submission
+    comments: "* Equal contribution"
     page_url: /Omnigrasp
     image: projects/omnigrasp/omnigrasp.gif
   - title: "Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation"
