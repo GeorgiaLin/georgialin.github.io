@@ -1,10 +1,44 @@
 # @Author: Your name
 # @Date:   2022-10-08 15:46:26
 # @Last Modified by:   Zhengyi Luo
-# @Last Modified time: 2024-06-13 23:58:34
+# @Last Modified time: 2024-06-29 12:39:59
 pre_prints:
 
 publications:
+  - title: "SMPLOlympics: Sports Environments for Physically Simulated Humanoids"
+    authors: 
+      - Zhengyi Luo*
+      - Jiashun Wang*
+      - Kangni Liu*
+      - Haotian Zhang 
+      - Chen Tessler
+      - Jingbo Wang
+      - Ye Yuan 
+      - Jinkun Cao 
+      - Zihui Lin 
+      - Fengyi Wang 
+      - Jessica Hodgins
+      - Kris Kitani
+    venue: In submission
+    comments: "* Equal contribution"
+    page_url: https://smplolympics.github.io/SMPLOlympics
+    image: projects/smplolympics/smplolympics.gif
+  - title: "Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation"
+    authors:
+      - Tairan He*
+      - Zhengyi Luo*
+      - Xialin He*
+      - Wenli Xiao
+      - Chong Zhang
+      - Weinan Zhang
+      - Kris Kitani
+      - Changliu Liu
+      - Guanya Shi
+    venue: In submission
+    comments: "* Equal contribution"
+    page_url: https://omni.human2humanoid.com/
+    paper_url: https://arxiv.org/abs/2406.08858
+    image: projects/omnih2o/OmniH2O.gif
   - title: "Grasping Diverse Objects with Simulated Humanoids"
     authors:
       - Zhengyi Luo*
