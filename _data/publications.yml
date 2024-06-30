@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2022-10-08 15:46:26
 # @Last Modified by:   Zhengyi Luo
-# @Last Modified time: 2024-06-30 15:55:27
+# @Last Modified time: 2024-06-30 16:34:08
 pre_prints:
 
 publications:
@@ -60,7 +60,7 @@ publications:
       - Kris Kitani
       - Changliu Liu
       - Guanya Shi
-    venue: In submission
+    venue: IROS 2024 (Oral Presentation)
     comments: "* Equal contribution"
     page_url: https://human2humanoid.com/
     paper_url: https://arxiv.org/abs/2403.04436
