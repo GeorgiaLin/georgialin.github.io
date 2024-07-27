@@ -1,7 +1,7 @@
 # @Author: Your name
 # @Date:   2022-10-08 15:46:26
 # @Last Modified by:   Zhengyi Luo
-# @Last Modified time: 2024-06-30 16:34:08
+# @Last Modified time: 2024-07-27 16:06:34
 pre_prints:
 
 publications:
@@ -50,6 +50,7 @@ publications:
     venue: In submission
     comments: "* Equal contribution"
     page_url: /Omnigrasp
+    paper_url: https://arxiv.org/abs/2407.11385
     image: projects/omnigrasp/omnigrasp.gif
   - title: "Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation"
     authors:
