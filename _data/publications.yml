@@ -23,6 +23,7 @@ publications:
     comments: "* Equal contribution"
     page_url: https://smplolympics.github.io/SMPLOlympics
     github_url: https://github.com/SMPLOlympics/SMPLOlympics
+    paper_url: https://arxiv.org/abs/2407.00187
     image: projects/smplolympics/smplolympics.gif
   - title: "OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning"
     authors:
@@ -35,7 +36,7 @@ publications:
       - Kris Kitani
       - Changliu Liu
       - Guanya Shi
-    venue: In submission
+    venue: CORL 2024
     comments: "* Equal contribution"
     page_url: https://omni.human2humanoid.com/
     paper_url: https://arxiv.org/abs/2406.08858
@@ -48,7 +49,7 @@ publications:
       - Alexander Winkler
       - Kris Kitani
       - Weipeng Xu
-    venue: In submission
+    venue: NeurIPS 2024
     comments: "* Equal contribution"
     page_url: /Omnigrasp
     paper_url: https://arxiv.org/abs/2407.11385
