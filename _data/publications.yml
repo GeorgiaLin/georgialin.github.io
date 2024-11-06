@@ -5,7 +5,39 @@
 pre_prints:
 
 publications:
-  - title: "SMPLOlympics: Sports Environments for Physically Simulated Humanoids"
+  - title: "HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots"
+    authors: 
+      - Tairan He*
+      - Wenli Xiao*
+      - Toru Lin
+      - Zhengyi Luo
+      - Zhenjia Xu
+      - Zhenyu Jiang
+      - Jan Kautz
+      - Changliu Liu
+      - Guanya Shi
+      - Xiaolong Wang
+      - Linxi Fan
+      - Yuke Zhu
+    venue: In submission
+    paper_url: https://arxiv.org/abs/2410.21229
+    image: projects/hover/hover.gif
+  - title: "CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control"
+    authors: 
+      - Guy Tevet
+      - Sigal Raab
+      - Setareh Cohan
+      - Daniele Reda
+      - Zhengyi Luo
+      - Xue Bin Peng
+      - Amit H. Bermano
+      - Michiel van de Panne
+    venue: In submission
+    page_url: https://guytevet.github.io/CLoSD-page/
+    github_url: https://github.com/GuyTevet/CLoSD
+    paper_url: https://arxiv.org/abs/2410.03441
+    image: projects/closd/closd.gif
+  - title: "Humanoidlympics: Sports Environments for Physically Simulated Humanoids"
     authors: 
       - Zhengyi Luo*
       - Jiashun Wang*
@@ -25,6 +57,39 @@ publications:
     github_url: https://github.com/SMPLOlympics/SMPLOlympics
     paper_url: https://arxiv.org/abs/2407.00187
     image: projects/smplolympics/smplolympics.gif
+  - title: "SkillMimic: Learning Reusable Basketball Skills from Demonstrations"
+    authors: 
+      - Yinhuai Wang*
+      - Qihan Zhao*
+      - Runyi Yu*
+      - Ailing Zeng
+      - Jing Lin
+      - Zhengyi Luo
+      - Hok Wai Tsui
+      - Jiwen Yu
+      - Xiu Li
+      - Qifeng Chen
+      - Jian Zhang
+      - Lei Zhang
+      - Ping Tan
+    venue: In submission
+    page_url: https://ingrid789.github.io/SkillMimic/
+    github_url: https://github.com/wyhuai/SkillMimic
+    paper_url: https://arxiv.org/abs/2408.15270v1
+    image: projects/skillmimic/skillmimic.gif
+  - title: "Grasping Diverse Objects with Simulated Humanoids"
+    authors:
+      - Zhengyi Luo*
+      - Jinkun Cao*
+      - Sammy Christen
+      - Alexander Winkler
+      - Kris Kitani
+      - Weipeng Xu
+    venue: NeurIPS 2024
+    comments: "* Equal contribution"
+    page_url: /Omnigrasp
+    paper_url: https://arxiv.org/abs/2407.11385
+    image: projects/omnigrasp/omnigrasp.gif
   - title: "OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning"
     authors:
       - Tairan He*
@@ -41,19 +106,6 @@ publications:
     page_url: https://omni.human2humanoid.com/
     paper_url: https://arxiv.org/abs/2406.08858
     image: projects/omnih2o/OmniH2O.gif
-  - title: "Grasping Diverse Objects with Simulated Humanoids"
-    authors:
-      - Zhengyi Luo*
-      - Jinkun Cao*
-      - Sammy Christen
-      - Alexander Winkler
-      - Kris Kitani
-      - Weipeng Xu
-    venue: NeurIPS 2024
-    comments: "* Equal contribution"
-    page_url: /Omnigrasp
-    paper_url: https://arxiv.org/abs/2407.11385
-    image: projects/omnigrasp/omnigrasp.gif
   - title: "Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation"
     authors:
       - Tairan He*
