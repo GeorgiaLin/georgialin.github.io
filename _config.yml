@@ -14,7 +14,7 @@ footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 
 url:  https://georgialin.github.io/
-baseurl:  georgialin.github.io
+baseurl:  
 last_updated: false # set to true if you want to display last updated in the footer
 
 # -----------------------------------------------------------------------------
