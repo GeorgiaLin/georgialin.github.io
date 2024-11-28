@@ -13,8 +13,8 @@ description: > # this means to ignore newlines until "url:"
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 
-url:  # the base hostname & protocol for your site
-baseurl:  # the subpath of your site, e.g. /blog/
+url:  https://georgialin.github.io/
+baseurl:  georgialin.github.io
 last_updated: false # set to true if you want to display last updated in the footer
 
 # -----------------------------------------------------------------------------
