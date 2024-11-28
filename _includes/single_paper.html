@@ -15,17 +15,21 @@
       >, {% else %} {{ author }}, {% endif %} {% endfor %} {{ paper.authors[-1]
       }}
     </li>
-    <li><b>{{ paper.venue }}</b></li>
+    <li>{{ paper.venue }}</li>
     <li><i>{{ paper.comments }}</i></li>
     <li>
       {%if paper.video_url%}
-      <a style="color: blue" href="{{ paper.video_url }}">[Video]</a>
+      {% endif %} {%if paper.website_url%}
+      <a style="color: DodgerBlue" href="{{ paper.website_url }}">[Website]</a>
+      <a style="color :DodgerBlue" href="{{ paper.video_url }}">[Video]</a>
       {% endif %} {%if paper.paper_url%}
-      <a style="color: blue" href="{{ paper.paper_url }}">[Paper]</a>
+      <a style="color: DodgerBlue" href="{{ paper.paper_url }}">[Product]</a>
       {% endif %} {%if paper.page_url%}
-      <a style="color: blue" href="{{ paper.page_url }}">[Project]</a>
+      <a style="color: DodgerBlue" href="{{ paper.page_url }}">[Project]</a>
       {% endif %} {%if paper.github_url%}
-      <a style="color: blue" href="{{ paper.github_url }}">[Code]</a>
+      <a style="color: DodgerBlue" href="{{ paper.github_url }}">[Code]</a>
+      {% endif %} {%if paper.blog_url%}
+      <a style="color: DodgerBlue" href="{{ paper.blog_url }}">[Blog]</a>
       {% endif %}
     </li>
   </ul>

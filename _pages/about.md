@@ -6,32 +6,31 @@ description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right
-  image: zen_grad2.jpg
+  image: g_photo.jpeg
   address: >
-    <p>Pittsburgh PA, 15213</p>
+   <p style="text-align:center; font-size:16px;">📍San Francisco Bay Area</p>
+
 
 news: true
 social: true
 ---
 
-Hi there! My name is Zhengyi Luo (罗正宜) and I am a final year PhD student at Carnegie Mellon University's Robotics Institute, School of Computer Science, advised by Prof. <a style="color:DodgerBlue" href="http://www.cs.cmu.edu/~kkitani/"><u>Kris Kitani</u></a>. I earned my bachelor's degree from University of Pennsylvania in 2019, where I worked with Prof. <a style="color:DodgerBlue" href="https://www.cis.upenn.edu/~kostas/"><u>Kostas Daniilidis</u></a>. My research has been supported by <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2022-north-america" style="color: DodgerBlue">Qualcomm Innovation Fellowship</a> and the <a href="https://www.cs.cmu.edu/afs/cs/project/careers/www/posters/MetaAI-PhDProgram22.pdf" style="color: DodgerBlue">Meta AI Mentorship Program</a>.
+👋 Hi there! My name is Georgia Lin (林梓惠). I am a Product person, Indie Developer, Podcaster, and a proud cat lover. 
 
+I am passionate about building great products. Throughout my career as a Product Manager, I have gained experience working on both established products and invative startup ideas. Currently, I serve as a Technical Program Manager on <a style="color:DodgerBlue" href="https://tesla.com/autopilot"> Tesla's Autopilot team</a>. My past companies include <a style="color:DodgerBlue" href="https://clarivate.com/">Clarivate</a>, <a style="color:DodgerBlue" href="https://www.sofi.com/">SoFi</a>, <a style="color:DodgerBlue" href="https://www.meitu.com/en/">Meitu</a>, <a style="color:DodgerBlue" href="https://www.neteasegames.com/">NetEase</a>, and <a style="color:DodgerBlue" href="https://www.kuaishou.com/en">Kuaishou Technology</a>. In my spare time, I also offer mentorship sessions on <a style="color:DodgerBlue" href="https://adplist.org/mentors/georgia-lin"> ADP List</a>.
 
-My research interest lies at the intersection of vision, learning, and robotics. I am working on topcis including human pose estimation, human-object interaction, human motion modelling etc. Through my research, I want to create methods that effectively interpret spatial-temporal sensory input and build a representation of the 3D world to reason about the interactions between agents and the physical environment. On the application side, I am excited about humanoid robots and AR/VR.
-
+I earned my bachelor's degree in Software Engineering from <a style="color:DodgerBlue" href="https://en.xmu.edu.cn/main.htm"> Xiamen University</a>, specializing in Human-Computer Interaction and Game Development. I also hold a master's degree from <a style="color:DodgerBlue" href="https://www.cmu.edu/)"> Carnegie Mellon University</a>, in Integrated Innovation for Products and Services.
 
 <div >
 
-<a style="color:DodgerBlue" href="mailto:zluo2@cs.cmu.edu">Email</a>
+<a style="color:DodgerBlue" href="georgialin1999@gmail.com">Email</a>
 /
-<a style="color:DodgerBlue" href="assets/pdf/Zhengyi_Luo_CV.pdf">CV</a>
+<a  style="color:DodgerBlue" href="https://github.com/GeorgiaLin">Github</a>
 /
-<a  style="color:DodgerBlue" href="https://scholar.google.com/citations?user=lHPTxGsAAAAJ&hl=en">Google Scholar</a>
+<a  style="color:DodgerBlue" href="https://www.linkedin.com/in/zihui-georgia-lin-5b7600187/">Linkedin</a>
 /
-<a  style="color:DodgerBlue" href="https://github.com/ZhengyiLuo">Github</a>
+<a  style="color:DodgerBlue" href="https://georgialin1999.medium.com/">Medium</a>
 /
-<a  style="color:DodgerBlue" href="https://www.linkedin.com/in/zhengyi-zen-luo-726156105/">Linkedin</a>
-/
-<a  style="color:DodgerBlue" href="https://twitter.com/zhengyiluo?lang=en">Twitter</a>
+<a  style="color:DodgerBlue" href="https://adplist.org/mentors/georgia-lin">ADP List</a>
 
 </div>
