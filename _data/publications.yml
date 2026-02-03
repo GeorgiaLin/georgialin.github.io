@@ -5,25 +5,38 @@
 pre_prints:
 
 publications:
-  - title: "👩🏻‍💻 SeeFood: an iOS app that tranlsates menu into tangible images"
+  - title: "👩🏻‍💻 ClosedReview: Anonymous platform for academia"
+    venue: Engineering, Design, Product
+    year: 2026
+    website_url: https://closedreview.ai/
+    image: projects/closedreview.png
+  - title: "📝 Georgia Lin: Wechat Official Account Blogs"
+    venue: Writing, Thoughts
+    year: 2025
+    image: projects/wechat.jpeg
+  - title: "👩🏻‍💻 SeeFood: an iOS app that translates menu into tangible images"
     venue: Engineering, Design, Product, Marketing
+    year: 2024
     website_url: https://seefood.site/
     image: projects/seefood.png
   - title: "👩🏻‍💻 JobPulse: a website that offers curated job opportunities for New Grads"
     venue: Engineering, Design, Product, Marketing
+    year: 2023
     website_url: https://jobpulse.fyi/
     blog_url: https://georgialin1999.medium.com/from-0-to-10k-users-our-product-experiment-with-jobpulse-e95f51adde53
     image: projects/jobpulse.png
   - title: "🎙️ Chatting with Georgia: A Chinese Podcast that focuses on individual stories"
-    venue: Podcast Host, Eiditing, Content Creation
+    venue: Podcast Host, Editing, Content Creation
+    year: 2024
     website_url: https://podcasts.apple.com/ge/podcast/%E5%92%8Cgeorgia%E8%81%8A%E5%A4%A9/id1773696192
     image: projects/podcast.png
   - title: "👩🏻‍💻 AI Briefing Room: A podcast that is entirely run by AI (Hackathon Winner)"
     venue: Product, Engineering, Design
+    year: 2024
     page_url: https://podcasts.apple.com/us/podcast/ai-briefing-room/id1742681854
     image: projects/ai-podcast.png
-  - title: "👩🏻‍💻 JobLetter: A GPT-driven app that allows you to write customized cover letter"
+  - title: "👩🏻‍💻 JobLetter: A GPT-driven app that allows you to write a customized cover letter"
     venue: Product, Engineering, Design
+    year: 2023
     blog_url: https://georgialin1999.medium.com/building-my-first-gpt-app-8bd6b0b4f352
     image: projects/jobletter.png
- 

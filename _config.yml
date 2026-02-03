@@ -9,7 +9,7 @@
 title: Georgia Lin
 email: georgialin1999@gmail.com
 description: > # this means to ignore newlines until "url:"
-  Hi! My name is Zhengyi (Zen) Luo, welcome to my website! 
+  Hi! My name is Georgia Lin, welcome to my website! 
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 
@@ -22,7 +22,7 @@ last_updated: false # set to true if you want to display last updated in the foo
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 # TODO: add layout settings (single page vs. multi-page)
 
 # -----------------------------------------------------------------------------

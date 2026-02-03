@@ -15,7 +15,7 @@
       >, {% else %} {{ author }}, {% endif %} {% endfor %} {{ paper.authors[-1]
       }}
     </li>
-    <li>{{ paper.venue }}</li>
+    <li>{{ paper.venue }}{% if paper.year %} · {{ paper.year }}{% endif %}</li>
     <li><i>{{ paper.comments }}</i></li>
     <li>
       {%if paper.video_url%}
