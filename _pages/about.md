@@ -19,7 +19,7 @@ social: true
 I like building great products.
 
 Meanwhile, I’ve worked as a Product, Software Engineer, and TPM at companies like
-<a style="color:DodgerBlue" href="https://www.tesla.com/autopilot">Tesla’s Autopilot </a>,
+<a style="color:DodgerBlue" href="https://www.tesla.com/autopilot">Tesla’s Autopilot</a>,
 <a style="color:DodgerBlue" href="https://clarivate.com/">Clarivate</a>,
 <a style="color:DodgerBlue" href="https://www.sofi.com/">SoFi</a>,
 <a style="color:DodgerBlue" href="https://www.meitu.com/en/">Meitu</a>,
