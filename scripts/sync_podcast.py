@@ -12,7 +12,7 @@ Idempotent and safe to re-run (weekly cron or manual). It PRESERVES:
 
 Standard library only (no pip deps) so it runs anywhere, including CI.
 """
-import os, re, html, sys
+import os, re, html, sys, json
 import xml.etree.ElementTree as ET
 from urllib.parse import unquote
 from urllib.request import urlopen, Request
@@ -83,6 +83,22 @@ def yq(s):
     return '"' + str(s).replace('\\', '\\\\').replace('"', '\\"') + '"'
 
 
+def fetch_apple_episodes():
+    """Map episode number -> that episode's Apple Podcasts URL (best effort)."""
+    out = {}
+    try:
+        data = json.loads(fetch("https://itunes.apple.com/lookup?id=1773696192"
+                                "&media=podcast&entity=podcastEpisode&limit=100").decode())
+        for r in data.get("results", []):
+            url = r.get("trackViewUrl") or r.get("episodeUrl")
+            n = epnum(r.get("trackName") or "")
+            if n and url:
+                out[n] = url.split("&uo=")[0]
+    except Exception as e:
+        print(f"! apple episode lookup failed: {e}")
+    return out
+
+
 def main():
     xml = fetch(FEED)
     ch = ET.fromstring(xml).find("channel")
@@ -114,6 +130,7 @@ def main():
     print(f"channel: {title} ({len(desc)} char desc)")
 
     # ---- episodes ----
+    apple_eps = fetch_apple_episodes()
     os.makedirs(POD, exist_ok=True)
     new, updated = 0, 0
     for it in ch.findall("item"):
@@ -133,25 +150,28 @@ def main():
 
         paras = clean_paragraphs(it.findtext("description") or "")
         ts_re = re.compile(r"^\s*(\d{1,2}:\d{2})")
-        summary_lines = [p for p in paras if not ts_re.match(p)]
-        ts_lines = [p for p in paras if ts_re.match(p)]
-        summary = summary_lines[0] if summary_lines else ""
+        intro_lines = [p for p in paras if not ts_re.match(p)]      # 简介 + 总结, kept together
+        ts_lines = [p for p in paras if ts_re.match(p)]             # 时间轴, separate section
+        summary = intro_lines[0] if intro_lines else ""            # short blurb for the listing
 
-        body = []
-        if ts_lines:
-            body.append("### 时间轴 Timestamps\n")
-            for t in ts_lines:
-                mm = re.match(r"^\s*(\d{1,2}:\d{2})\s*[:：]?\s*(.*)$", t)
-                body.append(f"- `{mm.group(1)}` {mm.group(2).strip()}" if mm else f"- {t}")
-            body.append("")
-        for x in summary_lines[1:]:
-            body.append(f"> {x}\n")
+        # timestamps -> structured front-matter list ("mm:ss desc")
+        timestamps = []
+        for t in ts_lines:
+            mm = re.match(r"^\s*(\d{1,2}:\d{2})\s*[:：]?\s*(.*)$", t)
+            timestamps.append(f"{mm.group(1)} {mm.group(2).strip()}" if mm else t)
 
         fm = ["---", "layout: podcast", f"number: {n}", f"title: {yq(etitle)}",
               f"date: {date}", f"duration: {yq(dur)}", f"audio: {yq(audio)}",
               f"guid: {yq(guid)}", f"summary: {yq(summary)}",
-              f"transcript: {existing_transcript_key(slug)}", "---"]
-        content = "\n".join(fm) + "\n\n" + "\n".join(body).rstrip() + "\n"
+              f"apple_episode: {yq(apple_eps.get(n, ''))}",
+              f"transcript: {existing_transcript_key(slug)}"]
+        if timestamps:
+            fm.append("timestamps:")
+            fm += [f"  - {yq(t)}" for t in timestamps]
+        fm.append("---")
+        # body = the intro/summary block only (one continuous section)
+        body = "\n\n".join(intro_lines)
+        content = "\n".join(fm) + "\n\n" + body.rstrip() + "\n"
 
         path = os.path.join(POD, f"{slug}.md")
         old = open(path, encoding="utf-8").read() if os.path.exists(path) else None

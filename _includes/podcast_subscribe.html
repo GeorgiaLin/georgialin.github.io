@@ -1,0 +1,8 @@
+{% assign ch = site.data.podcast_channel %}
+{% assign apple = include.apple | default: ch.apple %}
+<div class="pod-subscribe">
+  {% if apple %}<a class="pod-btn" href="{{ apple }}" target="_blank" rel="noopener"><img class="pod-ic" src="{{ '/assets/img/podcast/icons/apple.svg' | relative_url }}" alt="" />Apple Podcasts</a>{% endif %}
+  {% if ch.spotify %}<a class="pod-btn" href="{{ ch.spotify }}" target="_blank" rel="noopener"><img class="pod-ic" src="{{ '/assets/img/podcast/icons/spotify.svg' | relative_url }}" alt="" />Spotify</a>{% endif %}
+  {% if ch.xiaoyuzhou %}<a class="pod-btn" href="{{ ch.xiaoyuzhou }}" target="_blank" rel="noopener"><img class="pod-ic" src="{{ '/assets/img/podcast/icons/xiaoyuzhou.png' | relative_url }}" alt="" />小宇宙</a>{% endif %}
+  {% if ch.rss %}<a class="pod-btn" href="{{ ch.rss }}" target="_blank" rel="noopener"><img class="pod-ic" src="{{ '/assets/img/podcast/icons/rss.svg' | relative_url }}" alt="" />RSS</a>{% endif %}
+</div>

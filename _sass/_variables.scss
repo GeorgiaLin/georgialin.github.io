@@ -27,6 +27,11 @@ $grey-color-dark: darken($grey-color, 25%);
 
 /* Set theme colors *************************/
 
-$theme-color: $grey-color-dark;
-$link-color: $blue-color;
+// Podcast / site brand palette (from the podcast cover)
+$brand-green: #3d7c1f !default;
+$brand-green-dark: #2f6115 !default;
+$brand-cream: #f7f3e0 !default;
+
+$theme-color: $brand-green;
+$link-color: $brand-green;
 $text-color: #000000 !default;

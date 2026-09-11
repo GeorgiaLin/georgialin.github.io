@@ -13,33 +13,41 @@ layout: default
     </div>
   </header>
 
-  {% if page.summary %}<p style="font-size:16px; line-height:1.6; color:#444;">{{ page.summary }}</p>{% endif %}
-
-  <audio id="pod-audio" controls preload="none" style="width:100%; margin:10px 0 20px;">
+  <audio id="pod-audio" controls preload="metadata" style="width:100%; margin:10px 0 18px;">
     <source src="{{ page.audio }}" />
-    你的浏览器不支持音频播放，请前往
-    <a href="{{ site.data.podcast_channel.apple }}">Apple Podcasts</a> 收听。
+    你的浏览器不支持音频播放，请前往 <a href="{{ page.apple_episode | default: site.data.podcast_channel.apple }}">Apple Podcasts</a> 收听。
   </audio>
 
-  <div class="pod-subscribe" style="margin-bottom:8px;">
-    {% if site.data.podcast_channel.apple %}<a class="pod-btn" href="{{ site.data.podcast_channel.apple }}" target="_blank">🎧 Apple</a>{% endif %}
-    {% if site.data.podcast_channel.spotify %}<a class="pod-btn" href="{{ site.data.podcast_channel.spotify }}" target="_blank">🟢 Spotify</a>{% endif %}
-    {% if site.data.podcast_channel.xiaoyuzhou %}<a class="pod-btn" href="{{ site.data.podcast_channel.xiaoyuzhou }}" target="_blank">🎙️ 小宇宙</a>{% endif %}
-  </div>
+  {% include podcast_subscribe.html apple=page.apple_episode %}
 
-  <article>
+  {% if content and content != "" %}
+  <div class="pod-shownotes" style="margin-top:20px; font-size:16px; line-height:1.7; color:#333;">
     {{ content }}
-  </article>
+  </div>
+  {% endif %}
+
+  {% if page.timestamps and page.timestamps.size > 0 %}
+  <div class="pod-section-title">时间轴 Timeline</div>
+  <ul class="pod-timeline">
+    {% for t in page.timestamps %}
+      {% assign tm = t | split: ' ' | first %}
+      {% assign desc = t | remove_first: tm | strip %}
+      {% assign hms = tm | split: ':' %}
+      {% if hms.size == 3 %}{% assign secs = hms[0] | times: 3600 | plus: hms[1] | times: 1 | plus: hms[2] %}
+      {% else %}{% assign secs = hms[0] | times: 60 | plus: hms[1] %}{% endif %}
+      <li><span class="pod-ts" data-t="{{ secs }}">{{ tm }}</span><span class="pod-ts-desc">{{ desc }}</span></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
 
   {% assign tr = site.data.transcripts[page.transcript] %}
   {% if tr and tr.segments %}
+  {% assign spkmap = site.data.podcast_speakers[page.transcript] %}
   <div class="pod-transcript">
     <div class="pod-tr-head">
-      <h3 style="margin:0;">📝 文字稿 Transcript</h3>
+      <div class="pod-section-title" style="margin:30px 0 0;">文字稿 Transcript</div>
       <button id="tr-toggle" class="pod-btn" type="button">收起</button>
     </div>
-    <p class="pod-tr-note">说话人 A/B 由停顿自动推断（无逐字声纹，可能有误）；点击时间戳可跳转音频。由 Whisper（{{ tr.model }}）自动生成。</p>
-    {% assign spkmap = site.data.podcast_speakers[page.transcript] %}
     <div id="tr-body" class="pod-tr-body">
       {% for seg in tr.segments %}
         {% assign tsec = seg.t | floor %}
@@ -47,20 +55,36 @@ layout: default
         {% assign ss = tsec | modulo: 60 %}
         {% assign spk = seg.spk | default: 'A' %}
         {% assign spkname = spkmap[spk] | default: spk %}
-        <p class="pod-tr-line spk-{{ spk | downcase }}">
-          <span class="pod-tr-time" data-t="{{ seg.t }}">{{ mm | prepend: '0' | slice: -2, 2 }}:{{ ss | prepend: '0' | slice: -2, 2 }}</span><span class="pod-tr-spk">{{ spkname }}</span><span class="pod-tr-text">{{ seg.s }}</span>
+        <p class="pod-tr-turn spk-{{ spk | downcase }}">
+          <span class="pod-tr-meta">
+            <span class="pod-tr-time" data-t="{{ seg.t }}">{{ mm | prepend: '0' | slice: -2, 2 }}:{{ ss | prepend: '0' | slice: -2, 2 }}</span>
+            <span class="pod-tr-spk">{{ spkname }}</span>
+          </span>
+          <span class="pod-tr-text">{{ seg.s }}</span>
         </p>
       {% endfor %}
     </div>
   </div>
+  {% endif %}
+
   <script>
     (function () {
       var audio = document.getElementById('pod-audio');
-      document.querySelectorAll('.pod-tr-time').forEach(function (el) {
-        el.addEventListener('click', function () {
-          var t = parseFloat(el.getAttribute('data-t'));
-          if (audio && !isNaN(t)) { audio.currentTime = t; audio.play(); }
+      // Fix broken scrubber for streamed media that reports duration = Infinity
+      if (audio) {
+        audio.addEventListener('loadedmetadata', function () {
+          if (audio.duration === Infinity || isNaN(audio.duration)) {
+            audio.currentTime = 1e101;
+            audio.addEventListener('timeupdate', function once() {
+              audio.removeEventListener('timeupdate', once);
+              audio.currentTime = 0;
+            });
+          }
         });
+      }
+      function seek(t) { if (audio && !isNaN(t)) { audio.currentTime = t; audio.play(); } }
+      document.querySelectorAll('.pod-ts, .pod-tr-time').forEach(function (el) {
+        el.addEventListener('click', function () { seek(parseFloat(el.getAttribute('data-t'))); });
       });
       var btn = document.getElementById('tr-toggle'), body = document.getElementById('tr-body');
       if (btn && body) btn.addEventListener('click', function () {
@@ -70,9 +94,4 @@ layout: default
       });
     })();
   </script>
-  {% else %}
-  <div class="pod-transcript-box">
-    📝 <b>文字稿 Transcript</b> — coming soon.
-  </div>
-  {% endif %}
 </div>

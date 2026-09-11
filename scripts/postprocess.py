@@ -37,10 +37,30 @@ def load_corrections():
     return json.load(open(CORR_FILE, encoding="utf-8")) if os.path.exists(CORR_FILE) else {}
 
 
+_FULLWIDTH = {",": "，", "?": "？", "!": "！", ";": "；", ":": "："}
+
+
+def to_fullwidth(text):
+    """Whisper often emits half-width punctuation in Chinese; normalise it.
+    Skips punctuation that sits between ASCII chars (e.g. inside numbers/URLs)."""
+    out = []
+    for i, ch in enumerate(text):
+        if ch in _FULLWIDTH:
+            prev = text[i - 1] if i > 0 else ""
+            nxt = text[i + 1] if i + 1 < len(text) else ""
+            if (prev.isascii() and prev.isalnum()) and (nxt.isascii() and nxt.isalnum()):
+                out.append(ch)          # keep, e.g. "3:15" or "a,b" inside latin
+            else:
+                out.append(_FULLWIDTH[ch])
+        else:
+            out.append(ch)
+    return "".join(out)
+
+
 def apply_corrections(text, corr):
     for wrong, right in corr.items():
         text = text.replace(wrong, right)
-    return text
+    return to_fullwidth(text)
 
 
 def label_segments(raw_segments, audio_path):

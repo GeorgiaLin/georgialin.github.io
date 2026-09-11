@@ -17,7 +17,7 @@ MIN_LEN = 0.7   # pad slices shorter than this before embedding
 SKIP_LEN = 0.2  # segments with less audio than this are labelled by a neighbour
 
 
-def _smooth(labels, passes=2, window=1):
+def _smooth(labels, passes=3, window=2):
     """Majority-vote smoothing to remove single-segment flicker."""
     labels = list(labels)
     for _ in range(passes):
