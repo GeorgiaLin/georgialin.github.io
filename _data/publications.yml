@@ -28,7 +28,7 @@ publications:
   - title: "🎙️ Chatting with Georgia: A Chinese Podcast that focuses on individual stories"
     venue: Podcast Host, Editing, Content Creation
     year: 2024
-    website_url: https://podcasts.apple.com/ge/podcast/%E5%92%8Cgeorgia%E8%81%8A%E5%A4%A9/id1773696192
+    page_url: /podcast/
     image: projects/podcast.png
   - title: "👩🏻‍💻 AI Briefing Room: A podcast that is entirely run by AI (Hackathon Winner)"
     venue: Product, Engineering, Design

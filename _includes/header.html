@@ -39,6 +39,19 @@
               {% endif %}
             </a>
           </li>
+          <!-- Podcast -->
+          <li class="nav-item {% if page.title == 'podcast' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/podcast/' | relative_url }}">
+              podcast
+              {% if page.title == "podcast" %}<span class="sr-only">(current)</span>{% endif %}
+            </a>
+          </li>
+          <!-- Book -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ '/book/' | relative_url }}">
+              book
+            </a>
+          </li>
           {% if site.blog_name %}
           <!-- Blog -->
       

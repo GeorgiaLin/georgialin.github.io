@@ -1,6 +1,7 @@
 <div class="paper-entry">
+  {% assign primary_url = paper.paper_url | default: paper.website_url | default: paper.page_url | default: paper.blog_url %}
   {% if paper.image %}
-  <a href="{{ paper.paper_url }}" target="_blank"
+  <a href="{{ primary_url }}" target="_blank"
     ><img src="{{ paper.image | prepend: '/assets/img/' | relative_url }}"
   /></a>
   {% endif %}
@@ -18,14 +19,14 @@
     <li>{{ paper.venue }}{% if paper.year %} · {{ paper.year }}{% endif %}</li>
     <li><i>{{ paper.comments }}</i></li>
     <li>
-      {%if paper.video_url%}
-      {% endif %} {%if paper.website_url%}
+      {%if paper.website_url%}
       <a style="color: DodgerBlue" href="{{ paper.website_url }}">[Website]</a>
+      {% endif %} {%if paper.video_url%}
       <a style="color :DodgerBlue" href="{{ paper.video_url }}">[Video]</a>
       {% endif %} {%if paper.paper_url%}
       <a style="color: DodgerBlue" href="{{ paper.paper_url }}">[Product]</a>
       {% endif %} {%if paper.page_url%}
-      <a style="color: DodgerBlue" href="{{ paper.page_url }}">[Project]</a>
+      <a style="color: DodgerBlue" href="{{ paper.page_url }}">[Listen]</a>
       {% endif %} {%if paper.github_url%}
       <a style="color: DodgerBlue" href="{{ paper.github_url }}">[Code]</a>
       {% endif %} {%if paper.blog_url%}

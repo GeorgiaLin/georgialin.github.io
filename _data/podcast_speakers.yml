@@ -1,0 +1,9 @@
+# Optional display names for the two diarized speakers, per episode.
+# A = host (opens the show), B = guest. Edit freely; if a guest is wrong,
+# just swap the names here — no re-transcription needed.
+ep-01: { A: Georgia, B: 张宁 }
+ep-02: { A: Georgia, B: 余安 }
+ep-03: { A: Georgia, B: 青思 }
+ep-04: { A: Georgia, B: Julia }
+ep-05: { A: Georgia, B: 余安 }
+ep-06: { A: Georgia, B: Julia }

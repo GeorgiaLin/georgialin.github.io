@@ -80,8 +80,12 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  podcast:
+    output: true
+    permalink: /podcast/:name/
 
 news_limit: 10
+
 
 # -----------------------------------------------------------------------------
 # Jekyll settings

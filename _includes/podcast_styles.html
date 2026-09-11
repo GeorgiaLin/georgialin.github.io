@@ -1,0 +1,60 @@
+<style>
+  .pod-hero { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .pod-hero img { width: 140px; height: 140px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,.12); flex-shrink: 0; }
+  .pod-hero .pod-meta h1 { margin: 0 0 4px; font-weight: 700; }
+  .pod-hero .pod-tagline { color: #888; font-size: 16px; margin-bottom: 12px; }
+  .pod-subscribe { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pod-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 999px; font-size: 14px; font-weight: 500;
+    border: 1px solid #e2e2e2; color: #333 !important; background: #fff; text-decoration: none !important;
+    transition: all .15s ease;
+  }
+  .pod-btn:hover { border-color: #1e88e5; color: #1e88e5 !important; transform: translateY(-1px); }
+  .pod-btn.rss:hover { border-color: #f39c12; color: #f39c12 !important; }
+
+  .pod-list { list-style: none; padding: 0; margin: 28px 0 0; }
+  .pod-ep { padding: 22px 0; border-top: 1px solid #ededed; }
+  .pod-ep:last-child { border-bottom: 1px solid #ededed; }
+  .pod-ep .pod-ep-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .pod-ep h3 { margin: 0; font-size: 19px; font-weight: 600; }
+  .pod-ep h3 a { color: inherit !important; text-decoration: none !important; }
+  .pod-ep h3 a:hover { color: #1e88e5 !important; }
+  .pod-ep .pod-ep-date { color: #999; font-size: 13px; white-space: nowrap; }
+  .pod-ep .pod-ep-sum { color: #555; font-size: 15px; margin: 8px 0 12px; line-height: 1.55; }
+  .pod-ep audio { width: 100%; height: 38px; margin-top: 4px; }
+  .pod-ep .pod-ep-link { font-size: 14px; font-weight: 500; }
+
+  .pod-badge { display:inline-block; font-size:12px; color:#1e88e5; border:1px solid #cfe3fb; background:#f4f9ff; border-radius:6px; padding:1px 8px; margin-right:8px; }
+  .pod-detail-meta { color:#999; font-size:14px; margin: 4px 0 18px; }
+  .pod-transcript-box {
+    margin-top: 32px; padding: 20px 22px; border: 1px dashed #d8d8d8;
+    border-radius: 12px; background: #fafafa; color: #888; font-size: 15px;
+  }
+  .pod-back { font-size: 14px; display:inline-block; margin-bottom: 14px; }
+
+  html[data-theme="dark"] .pod-btn,
+  body.dark .pod-btn { background: transparent; }
+
+  .pod-transcript { margin-top: 32px; }
+  .pod-tr-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .pod-tr-note { color: #999; font-size: 13px; margin: 6px 0 14px; }
+  .pod-tr-body { border-top: 1px solid #ededed; padding-top: 12px; }
+  .pod-tr-line {
+    margin: 0 0 14px; line-height: 1.75; font-size: 15.5px;
+    display: grid; grid-template-columns: 48px auto 1fr; gap: 4px 10px;
+    align-items: baseline; padding-left: 10px; border-left: 3px solid transparent;
+  }
+  .pod-tr-time {
+    grid-column: 1; cursor: pointer; font-variant-numeric: tabular-nums;
+    font-size: 12.5px; user-select: none; padding-top: 2px;
+  }
+  .pod-tr-time:hover { text-decoration: underline; }
+  .pod-tr-spk { grid-column: 2; font-size: 12px; font-weight: 600; white-space: nowrap; padding-top: 2px; }
+  .pod-tr-text { grid-column: 3; color: #2b2b2b; }
+  /* Speaker colours: A = blue, B = pink */
+  .pod-tr-line.spk-a { border-left-color: #1e88e5; }
+  .pod-tr-line.spk-a .pod-tr-time, .pod-tr-line.spk-a .pod-tr-spk { color: #1e88e5; }
+  .pod-tr-line.spk-b { border-left-color: #e91e8c; }
+  .pod-tr-line.spk-b .pod-tr-time, .pod-tr-line.spk-b .pod-tr-spk { color: #e91e8c; }
+</style>

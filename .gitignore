@@ -5,3 +5,8 @@ _site
 .ruby-version
 Gemfile.lock
 
+
+# local Jekyll preview override (do not deploy)
+_config_local.yml
+__pycache__/
+*.pyc
