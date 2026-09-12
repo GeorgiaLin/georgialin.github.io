@@ -68,15 +68,24 @@ layout: default
       var audio = document.getElementById('pod-audio');
       // Fix broken scrubber for streamed media that reports duration = Infinity
       if (audio) {
-        audio.addEventListener('loadedmetadata', function () {
+        var durFixing = false;
+        function fixDuration() {
+          if (durFixing) return;
           if (audio.duration === Infinity || isNaN(audio.duration)) {
-            audio.currentTime = 1e101;
-            audio.addEventListener('timeupdate', function once() {
-              audio.removeEventListener('timeupdate', once);
-              audio.currentTime = 0;
-            });
+            durFixing = true;
+            var onDur = function () {
+              if (audio.duration !== Infinity && !isNaN(audio.duration)) {
+                audio.removeEventListener('durationchange', onDur);
+                audio.currentTime = 0;   // real duration known now; reset scrubber
+                durFixing = false;
+              }
+            };
+            audio.addEventListener('durationchange', onDur);
+            try { audio.currentTime = 1e7; } catch (e) { durFixing = false; }
           }
-        });
+        }
+        audio.addEventListener('loadedmetadata', fixDuration);
+        if (audio.readyState > 0) fixDuration();
       }
       function seek(t) { if (audio && !isNaN(t)) { audio.currentTime = t; audio.play(); } }
       document.querySelectorAll('.pod-ts, .pod-tr-time').forEach(function (el) {
