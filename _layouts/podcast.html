@@ -49,19 +49,15 @@ layout: default
       <button id="tr-toggle" class="pod-btn" type="button">收起</button>
     </div>
     <div id="tr-body" class="pod-tr-body">
+      {% assign prev_spk = '' %}
       {% for seg in tr.segments %}
-        {% assign tsec = seg.t | floor %}
-        {% assign mm = tsec | divided_by: 60 %}
-        {% assign ss = tsec | modulo: 60 %}
         {% assign spk = seg.spk | default: 'A' %}
         {% assign spkname = spkmap[spk] | default: spk %}
         <p class="pod-tr-turn spk-{{ spk | downcase }}">
-          <span class="pod-tr-meta">
-            <span class="pod-tr-time" data-t="{{ seg.t }}">{{ mm | prepend: '0' | slice: -2, 2 }}:{{ ss | prepend: '0' | slice: -2, 2 }}</span>
-            <span class="pod-tr-spk">{{ spkname }}</span>
-          </span>
+          {% if spk != prev_spk %}<span class="pod-tr-spk">{{ spkname }}</span>{% endif %}
           <span class="pod-tr-text">{{ seg.s }}</span>
         </p>
+        {% assign prev_spk = spk %}
       {% endfor %}
     </div>
   </div>

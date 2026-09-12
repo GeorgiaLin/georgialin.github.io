@@ -5,6 +5,12 @@
 pre_prints:
 
 publications:
+  - title: "👩🏻‍💻 AgentsDock: an IDE designed for agentic AI research"
+    venue: Product, Engineering, Design
+    year: 2026
+    website_url: https://agentsdock.net/
+    github_url: https://github.com/ZhengyiLuo/AgentsDock
+    image: projects/agentsdock.png
   - title: "👩🏻‍💻 ClosedReview: Anonymous platform for academia"
     venue: Engineering, Design, Product
     year: 2026

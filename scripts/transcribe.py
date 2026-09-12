@@ -54,7 +54,6 @@ def main(argv):
     only = [a for a in argv if not a.startswith("-")]
     os.makedirs(RAW, exist_ok=True)
     os.makedirs(OUT, exist_ok=True)
-    corr = postprocess.load_corrections()
 
     todo = [e for e in parse_eps()
             if (not only or e["slug"] in only)
@@ -80,7 +79,7 @@ def main(argv):
                "segments": [{"start": round(x["start"], 2), "end": round(x["end"], 2),
                              "text": x["text"].strip()} for x in r["segments"] if x["text"].strip()]}
         json.dump(raw, open(f"{RAW}/{slug}.raw.json", "w"), ensure_ascii=False)
-        postprocess.process(slug, corr)   # writes _data/transcripts/<slug>.json
+        postprocess.process(slug)   # writes _data/transcripts/<slug>.json
         print(f"  {len(raw['segments'])} raw segments in {time.time()-s:.0f}s", flush=True)
 
 

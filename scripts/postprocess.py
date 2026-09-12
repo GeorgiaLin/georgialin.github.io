@@ -33,8 +33,19 @@ GAP_TURN = 0.8       # silence (s) between segments that marks a new turn
 BACKCHANNEL = 6      # chars; used only by the alternation fallback
 
 
-def load_corrections():
-    return json.load(open(CORR_FILE, encoding="utf-8")) if os.path.exists(CORR_FILE) else {}
+def load_corrections(slug=None):
+    """Returns (global_pairs, episode_pairs).
+    global_pairs: from scripts/corrections.json (applied before punctuation norm).
+    episode_pairs: ordered list from scripts/corrections/<slug>.json (applied
+    AFTER full-width normalization, so find-strings can use full-width 。，？ and
+    encode context via longer strings)."""
+    gpairs = list(json.load(open(CORR_FILE, encoding="utf-8")).items()) if os.path.exists(CORR_FILE) else []
+    epairs = []
+    if slug:
+        ep = os.path.join(ROOT, "scripts", "corrections", f"{slug}.json")
+        if os.path.exists(ep):
+            epairs = [tuple(p) for p in json.load(open(ep, encoding="utf-8"))]
+    return gpairs, epairs
 
 
 _FULLWIDTH = {",": "，", "?": "？", "!": "！", ";": "；", ":": "："}
@@ -58,13 +69,31 @@ def to_fullwidth(text):
 
 
 def apply_corrections(text, corr):
-    for wrong, right in corr.items():
+    """corr = (global_pairs, episode_pairs). Global fixes -> full-width -> episode fixes."""
+    gpairs, epairs = corr
+    for wrong, right in gpairs:
         text = text.replace(wrong, right)
-    return to_fullwidth(text)
+    text = to_fullwidth(text)
+    for wrong, right in epairs:
+        text = text.replace(wrong, right)
+    return text
 
 
-def label_segments(raw_segments, audio_path):
-    """One A/B label per raw segment. Voice clustering if possible, else pauses."""
+def label_segments(raw_segments, audio_path, slug=None):
+    """One A/B label per raw segment.
+    Priority: ground-truth 原稿 alignment > voice diarization > pause alternation."""
+    # 1. align to the original script if we have one (most reliable)
+    if slug:
+        try:
+            import reconcile
+            sp = reconcile.script_path(slug)
+            if sp:
+                labels = reconcile.align_speakers(raw_segments, open(sp, encoding="utf-8").read())
+                if labels:
+                    return labels, "script"
+        except Exception as e:
+            print(f"  (script alignment failed: {e})")
+    # 2. audio diarization (sherpa-onnx + Georgia voiceprint)
     if audio_path and os.path.exists(audio_path):
         try:
             import diarize
@@ -73,6 +102,7 @@ def label_segments(raw_segments, audio_path):
                 return labels, "voice"
         except Exception as e:
             print(f"  (voice diarization unavailable, using alternation: {e})")
+    # 3. fallback: alternate on pauses
     labels, spk, prev_end = [], "A", None
     for s in raw_segments:
         if prev_end is not None and (s["start"] - prev_end) >= GAP_TURN:
@@ -82,8 +112,8 @@ def label_segments(raw_segments, audio_path):
     return labels, "alternation"
 
 
-def build(raw_segments, corr, audio_path=None):
-    labels, method = label_segments(raw_segments, audio_path)
+def build(raw_segments, corr, audio_path=None, slug=None):
+    labels, method = label_segments(raw_segments, audio_path, slug)
     # merge consecutive same-speaker segments into paragraphs
     out = []
     for s, lab in zip(raw_segments, labels):
@@ -94,8 +124,9 @@ def build(raw_segments, corr, audio_path=None):
             out[-1]["s"] += txt
         else:
             out.append({"t": round(s["start"], 1), "s": txt, "spk": lab})
+    import edited
     for o in out:
-        o["s"] = apply_corrections(o["s"].strip(), corr)
+        o["s"] = edited.ensure_period(apply_corrections(o["s"].strip(), corr))
     return out, method
 
 
@@ -106,15 +137,23 @@ def find_audio(slug):
     return None
 
 
-def process(slug, corr):
+def process(slug, corr=None):
     raw_path = os.path.join(RAW, f"{slug}.raw.json")
     if not os.path.exists(raw_path):
         print(f"! no raw cache for {slug}")
         return
+    if corr is None:
+        corr = load_corrections(slug)
     raw = json.load(open(raw_path, encoding="utf-8"))
     raw_segs = raw["segments"] if isinstance(raw, dict) else raw
     meta = raw if isinstance(raw, dict) else {}
-    segs, method = build(raw_segs, corr, find_audio(slug))
+    # a hand-edited transcript, if present, is the source of truth
+    import edited
+    edited_segs = edited.build(slug, raw_segs)
+    if edited_segs:
+        segs, method = edited_segs, "edited"
+    else:
+        segs, method = build(raw_segs, corr, find_audio(slug), slug)
     os.makedirs(OUT, exist_ok=True)
     json.dump({"slug": slug, "number": meta.get("number"), "guid": meta.get("guid"),
                "generated": meta.get("generated"), "model": meta.get("model", "large-v3"),
@@ -126,13 +165,12 @@ def process(slug, corr):
 
 
 def main(argv):
-    corr = load_corrections()
     only = [a for a in argv if not a.startswith("-")]
     slugs = only or [os.path.basename(p)[:-9] for p in sorted(glob.glob(f"{RAW}/*.raw.json"))]
     if not slugs:
         print("No raw caches found. Run transcribe.py first.")
     for slug in slugs:
-        process(slug, corr)
+        process(slug)
 
 
 if __name__ == "__main__":

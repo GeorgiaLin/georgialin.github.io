@@ -1,73 +1,125 @@
 #!/usr/bin/env python3
-"""Token-free speaker diarization by clustering voice embeddings.
+"""Token-free speaker diarization tuned for this 2-person Mandarin podcast.
 
-diarize(audio_path, segments) embeds each Whisper segment with Resemblyzer's
-pretrained voice encoder (bundled, no Hugging Face token), clusters the
-embeddings into 2 speakers with KMeans, smooths the label sequence to remove
-isolated flips, and returns an "A"/"B" label per segment. "A" = the speaker of
-the earliest segment (the host opens the show).
+Pipeline (per the research recommendation):
+  1. sherpa-onnx offline diarization: pyannote-segmentation-3.0 (ONNX) +
+     a Mandarin CAM++ voice-embedding model, with num_speakers fixed to 2.
+  2. Label the two clusters with an *enrolled* reference voiceprint of the host
+     (Georgia, who appears in every episode): whichever cluster is closer to her
+     voiceprint = "A" (Georgia), the other = "B" (guest). This fixes the
+     label-permutation problem that blind clustering can't solve.
+  3. Assign each Whisper segment to a speaker by maximum time overlap.
 
-Speaker turns therefore come from actual voice changes, not from pauses. If
-resemblyzer or the audio is missing, postprocess.py falls back to alternation.
+Models live in ../transcribe_work/diar_models (downloaded once, not committed).
+The host voiceprint is cached at ../transcribe_work/georgia_ref.npy.
 """
+import os
 import numpy as np
 
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+WORK = os.path.join(ROOT, "..", "transcribe_work")
+MODELS = os.path.join(WORK, "diar_models")
+SEG = os.path.join(MODELS, "sherpa-onnx-pyannote-segmentation-3-0", "model.onnx")
+EMB = os.path.join(MODELS, "campplus.onnx")
+REF = os.path.join(WORK, "georgia_ref.npy")
 SR = 16000
-MIN_LEN = 0.7   # pad slices shorter than this before embedding
-SKIP_LEN = 0.2  # segments with less audio than this are labelled by a neighbour
+
+# clean solo-Georgia openings used to build her reference voiceprint (slug, start, end)
+ENROLL_CLIPS = [("ep-05", 1, 20), ("ep-06", 1, 22), ("ep-04", 1, 24)]
+
+_extractor = None
 
 
-def _smooth(labels, passes=3, window=2):
-    """Majority-vote smoothing to remove single-segment flicker."""
-    labels = list(labels)
-    for _ in range(passes):
-        out = labels[:]
-        for i in range(len(labels)):
-            lo, hi = max(0, i - window), min(len(labels), i + window + 1)
-            win = labels[lo:hi]
-            out[i] = max(set(win), key=win.count)
-        labels = out
-    return labels
+def _load_audio(path, start=None, end=None):
+    import librosa
+    wav, _ = librosa.load(path, sr=SR, mono=True)
+    if start is not None:
+        wav = wav[int(start * SR):int(end * SR)]
+    return np.ascontiguousarray(wav, dtype=np.float32)
+
+
+def _embedder():
+    global _extractor
+    if _extractor is None:
+        import sherpa_onnx
+        cfg = sherpa_onnx.SpeakerEmbeddingExtractorConfig(model=EMB)
+        _extractor = sherpa_onnx.SpeakerEmbeddingExtractor(cfg)
+    return _extractor
+
+
+def _embed(samples):
+    ext = _embedder()
+    s = ext.create_stream()
+    s.accept_waveform(SR, samples)
+    s.input_finished()
+    return np.array(ext.compute(s), dtype=np.float32)
+
+
+def _cos(a, b):
+    return float(np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b) + 1e-9))
+
+
+def _find_audio(slug):
+    import glob
+    for p in sorted(glob.glob(os.path.join(WORK, f"{slug}.*"))):
+        if not p.endswith(".raw.json"):
+            return p
+    return None
+
+
+def georgia_reference():
+    if os.path.exists(REF):
+        return np.load(REF)
+    embs = []
+    for slug, a, b in ENROLL_CLIPS:
+        ap = _find_audio(slug)
+        if ap:
+            embs.append(_embed(_load_audio(ap, a, b)))
+    if not embs:
+        return None
+    ref = np.mean(embs, axis=0)
+    np.save(REF, ref)
+    return ref
 
 
 def diarize(audio_path, segments, n_speakers=2):
-    import librosa
-    from resemblyzer import VoiceEncoder
-    from sklearn.cluster import KMeans
-
-    # load at 16k mono WITHOUT silence trimming so sample offsets match segment times
-    wav, _ = librosa.load(audio_path, sr=SR, mono=True)
-    encoder = VoiceEncoder(verbose=False)
-
-    embs, idx = [], []
-    for i, s in enumerate(segments):
-        a, b = int(s["start"] * SR), int(s["end"] * SR)
-        if b - a < int(SKIP_LEN * SR):
-            continue
-        if b - a < int(MIN_LEN * SR):             # widen short slices around centre
-            mid = (a + b) // 2
-            half = int(MIN_LEN * SR / 2)
-            a, b = max(0, mid - half), min(len(wav), mid + half)
-        try:
-            embs.append(encoder.embed_utterance(wav[a:b]))
-            idx.append(i)
-        except Exception:
-            continue
-
-    if len(embs) < n_speakers:
+    import sherpa_onnx
+    cfg = sherpa_onnx.OfflineSpeakerDiarizationConfig(
+        segmentation=sherpa_onnx.OfflineSpeakerSegmentationModelConfig(
+            pyannote=sherpa_onnx.OfflineSpeakerSegmentationPyannoteModelConfig(model=SEG)),
+        embedding=sherpa_onnx.SpeakerEmbeddingExtractorConfig(model=EMB),
+        clustering=sherpa_onnx.FastClusteringConfig(num_clusters=n_speakers),
+        min_duration_on=0.3, min_duration_off=0.5,
+    )
+    sd = sherpa_onnx.OfflineSpeakerDiarization(cfg)
+    wav = _load_audio(audio_path)
+    res = sd.process(wav).sort_by_start_time()
+    turns = [(s.start, s.end, s.speaker) for s in res]
+    if not turns:
         return None
 
-    km = KMeans(n_clusters=n_speakers, n_init=10, random_state=0).fit(np.array(embs))
-    raw = {i: int(l) for i, l in zip(idx, km.labels_)}
-    # fill skipped segments from nearest embedded neighbour
-    labels = []
-    for i in range(len(segments)):
-        if i in raw:
-            labels.append(raw[i])
-        else:
-            nearest = min(idx, key=lambda k: abs(k - i))
-            labels.append(raw[nearest])
+    # map cluster index -> A/B using Georgia's voiceprint
+    ref = georgia_reference()
+    label = {}
+    if ref is not None:
+        for spk in set(t[2] for t in turns):
+            # mean embedding over this cluster's longest few turns
+            segs = sorted([t for t in turns if t[2] == spk], key=lambda t: t[1] - t[0], reverse=True)[:6]
+            embs = [_embed(wav[int(a * SR):int(b * SR)]) for a, b, _ in segs if b - a >= 0.5]
+            label[spk] = np.mean([_cos(e, ref) for e in embs]) if embs else -1
+        georgia_cluster = max(label, key=label.get)
+        spk2ab = {spk: ("A" if spk == georgia_cluster else "B") for spk in label}
+    else:
+        spk2ab = {spk: ("A" if spk == turns[0][2] else "B") for spk in set(t[2] for t in turns)}
 
-    labels = _smooth(labels)
-    a_cluster = labels[0]
-    return ["A" if l == a_cluster else "B" for l in labels]
+    # assign each Whisper segment to the max-overlap diarization turn
+    out = []
+    for seg in segments:
+        s0, s1 = seg["start"], seg["end"]
+        best, best_ov = None, 0.0
+        for a, b, spk in turns:
+            ov = max(0.0, min(s1, b) - max(s0, a))
+            if ov > best_ov:
+                best_ov, best = ov, spk
+        out.append(spk2ab.get(best, "A") if best is not None else (out[-1] if out else "A"))
+    return out
