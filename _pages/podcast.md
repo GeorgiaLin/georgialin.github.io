@@ -24,7 +24,7 @@ nav: true
     {% if ready %}<a class="pod-ep-link" href="{{ ep.url | relative_url }}">{% else %}<div class="pod-ep-link pod-ep-soon">{% endif %}
       <div class="pod-ep-top">
         <h3>{{ ep.title }}</h3>
-        <span class="pod-ep-date">{{ ep.date | date: "%Y-%m-%d" }}{% if ep.duration %} · {{ ep.duration }}{% endif %}</span>
+        <span class="pod-ep-date">{{ ep.date | date: "%Y-%m-%d" }}</span>
       </div>
       {% if ep.summary %}<div class="pod-ep-sum">{{ ep.summary | truncate: 96 }}</div>{% endif %}
     {% if ready %}</a>{% else %}</div>{% endif %}
