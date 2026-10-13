@@ -50,7 +50,7 @@ blogger_url: # your blogger URL
 contact_note: >
   georgialin1999@gmail.com
 
-google_analytics: UA-XXXXXXXXX # out your google-analytics code
+google_analytics: G-RRPXSC6RVF
 
 # -----------------------------------------------------------------------------
 # Blog
@@ -150,7 +150,7 @@ plugins:
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_analytics:  false
+enable_google_analytics:  true   # GA4 via google_analytics (G-...) above; live domain only
 enable_katex:             true
 enable_mansory:           true
 enable_progressbar:       true
