@@ -30,7 +30,8 @@ NS = {"itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd"}
 # is already in podcast_channel.yml so manual edits survive a re-sync.
 MANUAL_DEFAULTS = {"apple": "https://podcasts.apple.com/us/podcast/%E5%92%8Cgeorgia%E8%81%8A%E5%A4%A9/id1773696192",
                    "spotify": "https://open.spotify.com/show/6bKusctv5UE1tV4noL2BUU",
-                   "xiaoyuzhou": "https://www.xiaoyuzhoufm.com/podcast/670c88d60d2f24f289e5adc7"}
+                   "xiaoyuzhou": "https://www.xiaoyuzhoufm.com/podcast/670c88d60d2f24f289e5adc7",
+                   "youtube": "https://www.youtube.com/@yimenshengyi"}
 
 
 def fetch(url):
@@ -42,7 +43,7 @@ def read_manual_links():
     links = dict(MANUAL_DEFAULTS)
     if os.path.exists(CHANNEL_YML):
         for line in open(CHANNEL_YML, encoding="utf-8"):
-            m = re.match(r"^(apple|spotify|xiaoyuzhou):\s*(.*)$", line.strip())
+            m = re.match(r"^(apple|spotify|xiaoyuzhou|youtube):\s*(.*)$", line.strip())
             if m and m.group(2):
                 links[m.group(1)] = m.group(2).strip().strip('"')
     return links
@@ -127,6 +128,7 @@ def main():
         f.write(f"apple: {yq(links['apple'])}\n")
         f.write(f"spotify: {yq(links['spotify'])}\n")
         f.write(f"xiaoyuzhou: {yq(links['xiaoyuzhou'])}\n")
+        f.write(f"youtube: {yq(links['youtube'])}\n")
     print(f"channel: {title} ({len(desc)} char desc)")
 
     # ---- episodes ----
