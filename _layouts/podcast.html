@@ -40,9 +40,9 @@ layout: default
   </ul>
   {% endif %}
 
-  {% assign tr = site.data.transcripts[page.transcript] %}
+  {% assign tr = site.data.transcripts[page.guid] %}
   {% if tr and tr.segments %}
-  {% assign spkmap = site.data.podcast_speakers[page.transcript] %}
+  {% assign spkmap = site.data.podcast_speakers[page.guid] %}
   <div class="pod-transcript">
     <div class="pod-tr-head">
       <div class="pod-section-title" style="margin:30px 0 0;">文字稿 Transcript</div>

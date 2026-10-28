@@ -1,9 +1,5 @@
-# Optional display names for the two diarized speakers, per episode.
-# A = host (opens the show), B = guest. Edit freely; if a guest is wrong,
-# just swap the names here — no re-transcription needed.
-ep-01: { A: Georgia, B: 张宁 }
-ep-02: { A: Georgia, B: 余安 }
-ep-03: { A: Georgia, B: 青思 }
-ep-04: { A: Georgia, B: Julia }
-ep-05: { A: Georgia, B: An }
-ep-06: { A: Georgia, B: Julia }
+# Speaker display names, keyed by episode GUID (stable across RSS renumbering).
+# A = host (Georgia), B = guest.
+64d4bde9-6bd9-48a6-807a-e5f97e080114: { A: Georgia, B: Julia }   # Solidcore
+3585c37a-5b0e-4962-a869-75ff0b1bcdf2: { A: Georgia, B: An }      # 大统华
+644b3686-f0ba-4f42-8ea8-f98ba3162862: { A: Georgia, B: Julia }   # ClassPass

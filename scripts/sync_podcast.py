@@ -133,12 +133,14 @@ def main():
     apple_eps = fetch_apple_episodes()
     os.makedirs(POD, exist_ok=True)
     new, updated = 0, 0
+    current_slugs = set()
     for it in ch.findall("item"):
         etitle = (it.findtext("title") or "").strip()
         n = epnum(etitle)
         if not n:
             continue
         slug = f"ep-{n:02d}"
+        current_slugs.add(slug)
         enc = it.find("enclosure")
         audio = decode_audio(enc.get("url")) if enc is not None else ""
         dur = (it.findtext("{http://www.itunes.com/dtds/podcast-1.0.dtd}duration") or "").strip()
@@ -182,7 +184,14 @@ def main():
         if old != content:
             open(path, "w", encoding="utf-8").write(content)
 
-    print(f"episodes: {new} new, {updated} updated")
+    # prune episode files no longer in the RSS feed
+    removed = 0
+    import glob as _glob
+    for path in _glob.glob(os.path.join(POD, "ep-*.md")):
+        if os.path.basename(path)[:-3] not in current_slugs:
+            os.remove(path)
+            removed += 1
+    print(f"episodes: {new} new, {updated} updated, {removed} removed")
 
 
 if __name__ == "__main__":
