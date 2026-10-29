@@ -5,6 +5,12 @@
 pre_prints:
 
 publications:
+  - title: "🎙️ A Business Overseas"
+    venue: Podcast Host, Editing, Content Creation
+    year: 2026
+    comments: Curious how the business actually works.
+    page_url: /podcast/
+    image: projects/yimenshengyi.png
   - title: "👩🏻‍💻 AgentsDock: an IDE designed for agentic AI research"
     venue: Product, Engineering, Design
     year: 2026
@@ -31,11 +37,6 @@ publications:
     website_url: https://jobpulse.fyi/
     blog_url: https://georgialin1999.medium.com/from-0-to-10k-users-our-product-experiment-with-jobpulse-e95f51adde53
     image: projects/jobpulse.png
-  - title: "🎙️ 一门生意 Overseas: a Chinese podcast breaking down how businesses actually work"
-    venue: Podcast Host, Editing, Content Creation
-    year: 2026
-    page_url: /podcast/
-    image: projects/yimenshengyi.png
   - title: "👩🏻‍💻 AI Briefing Room: A podcast that is entirely run by AI (Hackathon Winner)"
     venue: Product, Engineering, Design
     year: 2024
