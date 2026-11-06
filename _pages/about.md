@@ -30,11 +30,11 @@ I earned my B.E. in Software Engineering from <a style="color:DodgerBlue" href="
 
 <div >
 
-<a style="color:DodgerBlue" href="georgialin1999@gmail.com">Email</a>
+<a style="color:DodgerBlue" href="mailto:georgialin1999@gmail.com">Email</a>
 /
 <a  style="color:DodgerBlue" href="https://github.com/GeorgiaLin">Github</a>
 /
-<a  style="color:DodgerBlue" href="https://www.linkedin.com/in/zihui-georgia-lin-5b7600187/">Linkedin</a>
+<a  style="color:DodgerBlue" href="https://www.linkedin.com/in/georgialinzh/">Linkedin</a>
 /
 <a  style="color:DodgerBlue" href="https://georgialin1999.medium.com/">Medium</a>
 
